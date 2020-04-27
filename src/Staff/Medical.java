@@ -1,10 +1,12 @@
 package Staff;
 
-public abstract class Medical {
+public class Medical extends Staff{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public Medical(String surname, String name) {
+		super(surname, name);
+		// TODO Auto-generated constructor stub
 	}
+
+	
 
 }
