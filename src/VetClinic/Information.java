@@ -63,6 +63,7 @@ public class Information implements InfoInterface {
 			//medicalStaff.addMedicalStaff(fullname1);
 			
 			//administrativeStaff.addAdministrativeStaff(fullname2);
+			// problemas pasando en este 
 			
 			}while(i<names.length || i>surnames.length);
 		
