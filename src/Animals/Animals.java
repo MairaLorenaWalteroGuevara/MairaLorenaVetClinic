@@ -2,16 +2,27 @@ package Animals;
 
 public abstract class Animals {
 
-	private String name;
-	private double age; 
-	private String medicalCondition;
+	protected String name;
+	protected int age; 
+	protected String medicalCondition;
 	
-	public Animals(String name, double age, String medicalCondition) {
+	public Animals(String name, int age, String medicalCondition) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.medicalCondition = medicalCondition;
 	}
+	
+	public String toString() {
+		return (name + " "+ age + " "+  medicalCondition);
+		
+	}
+	
+	
+	public double toint() {
+		return age;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -21,7 +32,7 @@ public abstract class Animals {
 	public double getAge() {
 		return age;
 	}
-	public void setAge(double age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getMedicalCondition() {

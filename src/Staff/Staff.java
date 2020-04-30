@@ -2,30 +2,25 @@ package Staff;
 
 public abstract class Staff {
 
-	private String fullName;
-	private String surname;
-	private String name;
-	private int iD;
-	private double salaryLevel;
-	private double payment;
+	
+	protected String surname;
+	protected String name;
+	protected int iD;
+	protected double salaryLevel;
+	protected double payment;
 
 	
 	
 	
 
-	public String getFullName() {
-		this.fullName = this.name + this.surname;
-		return fullName;
-	}
-
-	public Staff(String name, String surname) {
+	public Staff(String name, String surname, int iD) {
+		
 		this.surname = surname;
 		this.name = name;
+		this.iD = iD;
 	}
 
-	public void setFullName(String name, String surname) {
-		this.fullName = name + surname;
-	}
+
 
 	public String getSurname() {
 		return surname;
@@ -75,7 +70,7 @@ public abstract class Staff {
 	}
 	
 	public String toString() {
-		return fullName;
+		return (name +" "+ surname +" "+ iD);
 		
 	}
 

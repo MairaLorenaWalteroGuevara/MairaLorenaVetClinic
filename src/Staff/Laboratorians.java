@@ -1,10 +1,17 @@
-package StaffMedical;
+package Staff;
 
 import Tasks.LaboratoryTasks;
 import Tasks.StaffTasks;
 
 
-public class Laboratorians implements StaffTasks, LaboratoryTasks  {
+public class Laboratorians extends Medical implements StaffTasks, LaboratoryTasks  {
+
+	
+
+	public Laboratorians(String surname, String name, int iD) {
+		super(surname, name, iD);
+		// TODO Auto-generated constructor stub
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

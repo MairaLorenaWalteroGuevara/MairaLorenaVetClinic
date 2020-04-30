@@ -1,9 +1,15 @@
-package StaffAdministrative;
+package Staff;
 
 import Tasks.HRTasks;
 import Tasks.StaffTasks;
 
-public class HR implements HRTasks, StaffTasks {
+public class HR extends Administrative implements HRTasks, StaffTasks {
+
+	
+	public HR(String surname, String name, int iD) {
+		super(surname, name, iD);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void onHolidays() {

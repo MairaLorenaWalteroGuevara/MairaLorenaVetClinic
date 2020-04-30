@@ -1,7 +1,12 @@
 package VetClinicInterfaces;
 
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import Staff.Administrative;
+import Staff.Medical;
 
 public interface InfoInterface {
 	/*
@@ -9,14 +14,20 @@ public interface InfoInterface {
 	 * and put them in Array<infoStaff) randomly 
 	 */
 
-public InfoStaffInterface createInfoStaff(BufferedReader in, BufferedReader on) throws IOException;;
+public  void  readFiles( ) throws IOException;
 
-	/*
-	 * this method need to read all the animals names from the file and take array of type of animal 
-	 * and put them in Array<infoStaff) randomly 
-	 */
+public ArrayList<Medical>  anyMedicalStaff(ArrayList<String> name, ArrayList<String> surname);
 
-public InfoAnimalsInterface createInfoAnimals(BufferedReader in) throws IOException;; 
+public ArrayList<Administrative>  anyAdministrativeStaff(String name, String surname); 
+
+
+
+	
+/*
+ * this method need to read all the animals names from the file and take array of type of animal 
+ * and put them in Array<infoStaff) randomly 
+ */
+
 
 
 

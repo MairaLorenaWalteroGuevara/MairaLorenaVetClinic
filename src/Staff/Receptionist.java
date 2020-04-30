@@ -1,9 +1,16 @@
-package StaffAdministrative;
+package Staff;
 
 import Tasks.DeskTasks;
 import Tasks.StaffTasks;
 
-public class Receptionist implements DeskTasks, StaffTasks {
+public class Receptionist extends Administrative implements DeskTasks, StaffTasks {
+
+	
+
+	public Receptionist(String surname, String name, int iD) {
+		super(surname, name, iD);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void onHolidays() {
