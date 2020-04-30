@@ -2,7 +2,11 @@ package Staff;
 
 public abstract class Staff {
 
+	// YOU ACTUALLY DON'T NEED THIS VARIABLE.
+	// I LEFT IT THERE, BUT YOU CAN REMOVE IT.
 	private String fullName;
+	
+	
 	private String surname;
 	private String name;
 	private int iD;
@@ -10,18 +14,20 @@ public abstract class Staff {
 	private double payment;
 
 	
-	
-	
-
-	public String getFullName() {
-		this.fullName = this.name + this.surname;
-		return fullName;
-	}
-
 	public Staff(String name, String surname) {
 		this.surname = surname;
 		this.name = name;
 	}
+	
+
+	public String getFullName() {
+		// YOU SEE? THIS THING IS NEVER RUNNING, BECAUSE
+		// WE NEVER CALLED THIS METHOD
+		this.fullName = this.name + this.surname;
+		return fullName;
+	}
+
+
 
 	public void setFullName(String name, String surname) {
 		this.fullName = name + surname;
@@ -74,9 +80,11 @@ public abstract class Staff {
 		this.salaryLevel = salaryLevel;
 	}
 	
+	// THIS METHOD WAS ORIGINALLY PRINTING THE FULLNAME VARIABLE
+	// BUT THAT VARIABLE HAS ALWAYS BEEN NULL...
 	public String toString() {
-		return fullName;
-		
+		//return fullName;
+		return name + " " + surname;
 	}
 
 }

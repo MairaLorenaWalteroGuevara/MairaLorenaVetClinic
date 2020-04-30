@@ -58,7 +58,9 @@ public class Information implements InfoInterface {
 			fullname1 = new Medical(fname, sname ); 
 			fullname2 = new Administrative(fname,sname);
 					
-			System.out.println( fullname1); 
+			// NOT ONLY THE INSTANCE SE ESTA CREANDO
+			// TAMBIEN SE ESTA IMPRIENDO COMO EL toString METHOD DEFINES
+			System.out.println(fullname1); 
 			
 			//medicalStaff.addMedicalStaff(fullname1);
 			
