@@ -10,16 +10,12 @@ public abstract class Staff {
 	protected double payment;
 
 	
-	
-	
-
 	public Staff(String name, String surname, int iD) {
 		
 		this.surname = surname;
 		this.name = name;
 		this.iD = iD;
 	}
-
 
 
 	public String getSurname() {
@@ -70,8 +66,10 @@ public abstract class Staff {
 	}
 	
 	public String toString() {
+
 		return (name +" "+ surname +" "+ iD);
 		
+
 	}
 
 }

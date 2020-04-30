@@ -182,7 +182,6 @@ public class Information  {
 				 animalList.add(nextAnimal);
 				 livestockAnimalsList.add(nextAnimal1);
 		//		 infoAnimals.addRabbit(nextAnimal);
-			
 		}else if ( i>=900) {
 				 Animals nextAnimal = new Sheep(animalname,age,medicalCondition );
 				 LivestockAnimals nextAnimal1 = new Sheep(animalname,age,medicalCondition );
