@@ -1,9 +1,12 @@
 package Staff;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import Tasks.DeskTasks;
 import Tasks.StaffTasks;
 
-public class Receptionist extends Administrative implements DeskTasks, StaffTasks {
+public class Receptionist extends Administrative implements DeskTasks {
 
 	
 
@@ -11,46 +14,38 @@ public class Receptionist extends Administrative implements DeskTasks, StaffTask
 		super(surname, name, iD);
 		// TODO Auto-generated constructor stub
 	}
+	
 
-	@Override
-	public void onHolidays() {
-		// TODO Auto-generated method stub
+	public void assinationwork(ArrayList<Receptionist> receptionistStaffList) {
+		
+		Random r = new Random(); 
 
-	}
-
-	@Override
-	public void answerEmails() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void dayOFF() {
-		// TODO Auto-generated method stub
-
+		int pick = r.nextInt(receptionistStaffList.size());
+		Receptionist s = (Receptionist) receptionistStaffList.get(pick);
+		System.out.println("the employee" + s.toString());
+		s.answerPhone();
+		
 	}
 
 	@Override
 	public void answerPhone() {
 		// TODO Auto-generated method stub
-
+		System.out.println("is answering the phone.");
 	}
 
 	@Override
 	public void fillFormat() {
 		// TODO Auto-generated method stub
-
+		System.out.println("is filling formats.");
+		
 	}
 
 	@Override
 	public void makeApointments() {
 		// TODO Auto-generated method stub
-
+		System.out.println("is making apointments.");
+		
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }

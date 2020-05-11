@@ -5,7 +5,16 @@ public abstract class Animals {
 	protected String name;
 	protected int age; 
 	protected String medicalCondition;
+	private Animals next; 
 	
+	public Animals getNext() {
+		return next;
+	}
+
+	public void setNext(Animals next) {
+		this.next = next;
+	}
+
 	public Animals(String name, int age, String medicalCondition) {
 		super();
 		this.name = name;

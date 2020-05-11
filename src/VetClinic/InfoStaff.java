@@ -10,7 +10,10 @@ import java.util.Collection;
 import java.util.Random;
 
 import Staff.Administrative;
+import Staff.HR;
+import Staff.IT;
 import Staff.Medical;
+import Staff.Receptionist;
 import Staff.Staff;
 import VetClinicInterfaces.InfoStaffInterface;
 
@@ -32,6 +35,7 @@ public class InfoStaff {
 		
 		readSuramesFile();
 		readNamesFile();
+		 
 	}
 	
 	public    ArrayList<String> readNamesFile() throws IOException {
@@ -128,4 +132,44 @@ public class InfoStaff {
 		return surnamesStaff; 
 	}
 	
+	
+//	public void assingwork(ArrayList<Administrative> administrativeStaffList) {
+//		
+//		Random r = new Random(); 
+//		
+//		for (int i=0; i<administrativeStaffList.size(); i++) {
+//			
+//		
+//		Administrative s = administrativeStaffList.get(r.nextInt(administrativeStaffList.size())); 
+//		Administrative s1 = administrativeStaffList.get(r.nextInt(administrativeStaffList.size())); 
+//		
+//		
+//		if (s.getiD()==221 && s.getiD()<=225 || s1.getiD()==221 && s1.getiD()<=225) {
+//			
+//			Receptionist a = (Receptionist) s;
+//			Receptionist b = (Receptionist) s1;
+//			a.fillFormat();
+//			b.answerPhone();
+//			System.out.print(a);
+//			
+//		} else if (s.getiD()==226 && s.getiD()<=228 || s1.getiD()==226 && s1.getiD()<=228) {
+//			
+//			IT a = (IT) s;
+//			IT b = (IT) s1;
+//			a.addNewContain();
+//			b.repairSoftware();
+//			
+//		} else if (s.getiD()==229 && s.getiD()<=230 || s1.getiD()==229 && s1.getiD()<=230) {
+//			
+//			HR a = (HR) s;
+//			HR b = (HR) s1;
+//			a.Payment();
+//			b.moralActivities();
+//			
+//		}
+//		}
+//		
+		
+		
+//	}
 }
