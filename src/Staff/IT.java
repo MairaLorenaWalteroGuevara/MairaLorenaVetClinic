@@ -6,9 +6,12 @@ import java.util.Random;
 import Tasks.ComputerTasks;
 import Tasks.StaffTasks;
 
-public class IT extends Administrative implements ComputerTasks {
+public class IT extends Administrative {
 
-	
+	private String reparing= " is reparing some funtion in the website";
+	private String adding = " and adding new staff in the website."; 
+
+
 
 	public IT(String surname, String name, int iD) {
 		super(surname, name, iD);
@@ -16,32 +19,10 @@ public class IT extends Administrative implements ComputerTasks {
 		
 	}
 	
-		public void assinationwork(ArrayList<IT> itStaffList) {
-		
-		Random r = new Random(); 
-		int i=0;
 
-		int pick = r.nextInt(itStaffList.size());
-		IT s = (IT) itStaffList.get(pick);
-		System.out.println("the employee" + s.toString());
-		s.repairSoftware();
-		
+	public String ItTasks(Administrative staff) {
+		return  staff + this.reparing + this.adding;
 	}
-
-	@Override
-	public void repairSoftware() {
-		// TODO Auto-generated method stub
-		System.out.println("is reparing some funtion in the website.");
-		
-	}
-
-	@Override
-	public void addNewContain() {
-		// TODO Auto-generated method stub
-		System.out.println("is adding new staff in the website.");
-		
-	}
-
 	
 
 }

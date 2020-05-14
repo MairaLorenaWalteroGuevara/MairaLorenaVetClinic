@@ -6,9 +6,11 @@ import java.util.Random;
 import Tasks.DeskTasks;
 import Tasks.StaffTasks;
 
-public class Receptionist extends Administrative implements DeskTasks {
+public class Receptionist extends Administrative {
 
-	
+	private String answering = " is answering the phone";
+	private String filling = ", filling formats";
+	private String making= " and making apointments. ";
 
 	public Receptionist(String surname, String name, int iD) {
 		super(surname, name, iD);
@@ -16,36 +18,12 @@ public class Receptionist extends Administrative implements DeskTasks {
 	}
 	
 
-	public void assinationwork(ArrayList<Receptionist> receptionistStaffList) {
+	public String RecTasks(Administrative staff) {
 		
-		Random r = new Random(); 
-
-		int pick = r.nextInt(receptionistStaffList.size());
-		Receptionist s = (Receptionist) receptionistStaffList.get(pick);
-		System.out.println("the employee" + s.toString());
-		s.answerPhone();
-		
+		return staff + this.answering + this.filling + this.making;
 	}
 
-	@Override
-	public void answerPhone() {
-		// TODO Auto-generated method stub
-		System.out.println("is answering the phone.");
-	}
-
-	@Override
-	public void fillFormat() {
-		// TODO Auto-generated method stub
-		System.out.println("is filling formats.");
-		
-	}
-
-	@Override
-	public void makeApointments() {
-		// TODO Auto-generated method stub
-		System.out.println("is making apointments.");
-		
-	}
+	
 
 	
 }

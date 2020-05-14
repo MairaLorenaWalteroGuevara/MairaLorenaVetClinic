@@ -1,8 +1,11 @@
 package Tasks;
 
+import Staff.Administrative;
+
 public interface StaffTasks {
 
-	public void onHolidays(); 
+ 
 	public void answerEmails(); 
-	public void dayOFF(); 
+	public void dayOFF();
+	public String onHolidays(Administrative staff); 
 }

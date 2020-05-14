@@ -5,12 +5,19 @@ import java.util.Collections;
 import java.util.Random;
 
 import Tasks.StaffTasks;
+import VetClinicInterfaces.InfoStaffInterface;
 
 public class Administrative extends Staff implements StaffTasks {
 
+	protected String onHolidays = " is on holidays "; 
+	
+	
+	
 	public Administrative(String surname, String name, int iD) {
 		super(surname, name, iD);
 		// TODO Auto-generated constructor stub
+		this.onHolidays = onHolidays;  
+		 
 	}
 	
 //	public void assingwork(ArrayList<Administrative> administrativeStaffList) {
@@ -27,13 +34,13 @@ public class Administrative extends Staff implements StaffTasks {
 //		Collections.shuffle(administrativeStaffList);
 //	}
 //	
-
 	@Override
-	public void onHolidays() {
+	public String onHolidays(Administrative staff) {
 		
-		System.out.println("is in holidays.");
+		return staff + this.onHolidays; 
 		
 	}
+	
 
 	@Override
 	public void answerEmails() {
@@ -48,6 +55,8 @@ public class Administrative extends Staff implements StaffTasks {
 		System.out.println("has a day off.");
 		
 	}
+
+	
 
 
 

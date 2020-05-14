@@ -18,7 +18,6 @@ import Animals.Dog;
 import Animals.LivestockAnimals;
 import Animals.Rabbit;
 import Animals.Sheep;
-import Staff.Medical;
 import Staff.*;
 
 public class Information  {
@@ -45,6 +44,13 @@ public class Information  {
 		Animal ();
 		populateQueue();
 		assingwork();
+		printStaff();
+		printSmallAnimalsVets();
+		printLargeAnimalsVets();
+		printAdministrativeStaff();
+		printMedicalStaff();
+		print();
+		
 	}
 
 	public void hierStaff() throws IOException {
@@ -110,51 +116,36 @@ public class Information  {
 		} else if (i>=30 && i<=34) {
 			Staff nextStaff = new Receptionist(fname,sname,administrativeiD);
 			Administrative nextStaff1 = new Receptionist(fname,sname,administrativeiD);
+			Receptionist nextStaff2 = new Receptionist(fname,sname,administrativeiD);
 			 staffList.add(nextStaff);
 			 administrativeStaffList.add(nextStaff1);
+			 receptionistStaffList.add(nextStaff2);
+			 
 			 
 			 administrativeiD++;
 		}else if (i>=35 && i<=37) {
 			Staff nextStaff = new IT(fname,sname,administrativeiD);
 			Administrative nextStaff1 = new IT(fname,sname,administrativeiD);
+			IT nextStaff2 = new IT(fname,sname,administrativeiD);
 			 staffList.add(nextStaff);
 			 administrativeStaffList.add(nextStaff1);
+			 itStaffList.add(nextStaff2);
 			 
 			 administrativeiD++;
 		}else if (i>=38) {
 			Staff nextStaff = new HR(fname,sname,administrativeiD);
 			Administrative nextStaff1 = new HR(fname,sname,administrativeiD);
+			HR nextStaff2 = new HR(fname,sname,administrativeiD);
 			 staffList.add(nextStaff);
 			 administrativeStaffList.add(nextStaff1);
+			 hrStaffList.add(nextStaff2);
 			 
 			 administrativeiD++;
 		}
+		  
 			
 		}
 		
-		System.out.println("administrative " + administrativeStaffList);
-		//System.out.println("medicalList" + medicalStaffList);
-		//System.out.println("large Animal List" + smallAnimalsVetsList);
-		
-		int staffCount = smallAnimalsVetsList.size();
-		System.out.println(" small vets" + staffCount);
-		int staffCount1 = largeAnimalsVetsList.size();
-		System.out.println("large vets" + staffCount1);
-		int staffCount3 = laboratoriansList.size();
-		System.out.println("laboratorians" + staffCount3);
-		
-		int staffCount4 = largeAnimalsVetsList.size();
-		System.out.println("large vets" + staffCount4);
-		int staffCount5 = laboratoriansList.size();
-		System.out.println("laboratorians" + staffCount5);
-		
-		
-		System.out.println(medicalStaffList);
-		int staffCount2 = administrativeStaffList.size();
-		System.out.println(staffCount2);
-		System.out.println(administrativeStaffList);
-		
-		System.out.println(staffList);
 		
 	}
 	
@@ -238,16 +229,16 @@ public class Information  {
 			
 		 }
 		
-		int itemCount = animalList.size();
-		System.out.println(itemCount);
-		int itemCount1 = companionAnimalsList.size();
-		System.out.println(itemCount1);
-		System.out.println("companion Animals " + companionAnimalsList);
-		int itemCount2 = livestockAnimalsList.size();
-		System.out.println(itemCount2);
-		System.out.println("livestock Animals: " + livestockAnimalsList);
-		
-		System.out.println("animal List: " + animalList); 
+//		int itemCount = animalList.size();
+//		System.out.println(itemCount);
+//		int itemCount1 = companionAnimalsList.size();
+//		System.out.println(itemCount1);
+//		System.out.println("companion Animals " + companionAnimalsList);
+//		int itemCount2 = livestockAnimalsList.size();
+//		System.out.println(itemCount2);
+//		System.out.println("livestock Animals: " + livestockAnimalsList);
+//		
+//		System.out.println("animal List: " + animalList); 
 	}
 	
 
@@ -292,7 +283,7 @@ public class Information  {
 					}
 				}
 			
-			System.out.println("   queue large Animals Vets:   " + largeAnimalsVetsList.get(0).getMyQueue());
+//			System.out.println("   queue large Animals Vets:   " + largeAnimalsVetsList.get(0).getMyQueue());
 			
 			
 			Random r = new Random(); 
@@ -314,66 +305,40 @@ public class Information  {
 				
 			}
 			
-			System.out.println("   queue laboratorista:   " + laboratoriansList.get(9).getMyQueue());
-			System.out.println("   queue laboratorista:   " + laboratoriansList.get(0).getMyQueue());	
+//			System.out.println("   queue laboratorista:   " + laboratoriansList.get(9).getMyQueue());
+//			System.out.println("   queue laboratorista:   " + laboratoriansList.get(0).getMyQueue());	
 			}
 	
 	
 	public void assingwork() {
 		
 		Random r = new Random(); 
-		
-		 Administrative pick = administrativeStaffList.get(r.nextInt(administrativeStaffList.size()));
+				 Administrative pick = administrativeStaffList.get(r.nextInt(administrativeStaffList.size()));
 		 
-		 
-		 
-		 for (Administrative e: administrativeStaffList) {
+				 int i=0; 
+ 
+		 for (Administrative e :administrativeStaffList ) {
 			 
 			 if (e == pick) {
+			
+				 System.out.println(e.onHolidays(e));
 				 
-				 System.out.println(e);
-				 e.onHolidays();
-				
 			 } else if (e instanceof HR) {
-					System.out.println(e);
-					((HR)e).Payment();
-					((HR)e).moralActivities();
-					
-			 }else if (e instanceof IT) {
-					System.out.println(e);
-					((IT)e).repairSoftware();
-					((IT)e).addNewContain();
-					
-				}else if (e instanceof Receptionist) {
-					System.out.println(e);
-					((Receptionist)e).answerPhone();
-					((Receptionist)e).fillFormat();
-				}
+
 				
-		 }
-			 
-		
-//		int i=0; 
-//		while (i<5) {
-//			
-//		
-//		 
-//		 
-//			if (pick instanceof HR ) {
-//				System.out.println(pick);
-//				((HR)pick).Payment();
-//				
-//			}else if (pick instanceof IT ) {
-//				System.out.println(pick);
-//				((IT)pick).repairSoftware();
-//				
-//			}else if (pick instanceof Receptionist ) {
-//				System.out.println(pick);
-//				((Receptionist)pick).answerPhone();
-//				
-//			}
-//			i++;
-//		}
+		 System.out.println(((HR) e).hrTasks(e));
+			
+			}else if (e instanceof IT ) {
+				System.out.println(((IT)e).ItTasks(e));
+				
+				
+			}else if (e instanceof Receptionist ) {
+				
+			System.out.println(((Receptionist)e).RecTasks(e));
+				
+			}
+			i++;
+		}
 //		
 //		int f=0; 
 //		while (f<5) {
@@ -394,12 +359,144 @@ public class Information  {
 //				((Receptionist)pick).fillFormat();
 //			}
 //			f++;
-//		}
+		}
 			 
-		System.out.println("Administrative list" + administrativeStaffList);
+		//System.out.println("Administrative list" + administrativeStaffList);
 		//shuffleCollection(administrativeStaffList);
 		//Collections.shuffle(administrativeStaffList);
 		//System.out.println("After shuffle adminsitrative list" + administrativeStaffList);
+		
+	
+	public ArrayList<Staff> printStaff( ){
+		
+		return staffList;
+		
+	}
+	
+	public ArrayList<Medical> printMedicalStaff( ){
+		
+		System.out.println("medicalList" + medicalStaffList);
+
+		return medicalStaffList;
+		
+	}
+	
+	public ArrayList<Administrative> printAdministrativeStaff( ){
+		
+		return administrativeStaffList;
+		
+	}
+	
+	public ArrayList<SmallAnimalsVet> printSmallAnimalsVets( ){
+		
+		System.out.println("small Animal List" + smallAnimalsVetsList);
+		return smallAnimalsVetsList;
+		
+	}
+	
+	public ArrayList<LargeAnimalsVet> printLargeAnimalsVets( ){
+		
+		System.out.println("large Animal List" + largeAnimalsVetsList);
+		return largeAnimalsVetsList;
+		
+	}
+	
+	public ArrayList<Laboratorians> printLaboratorians( ){
+		
+		return laboratoriansList;
+		
+	}
+	
+	public ArrayList<IT> printITStaff( ){
+		
+		return itStaffList;
+		
+	}
+	
+	public ArrayList<HR> printHRStaff( ){
+		
+		return hrStaffList;
+		
+	}
+	
+	public ArrayList<Receptionist> printReceptionistStaff( ){
+		
+		return receptionistStaffList;
+		
+	}
+	
+	public void print() {
+		
+		System.out.println("Staff list" + staffList);
+		System.out.println("administrative " + administrativeStaffList);
+		System.out.println("ad" + administrativeStaffList);
+		System.out.println("HR" + hrStaffList);
+		System.out.println("IT" + itStaffList);
+		System.out.println("Receptionist" + receptionistStaffList);
+		
+//		//System.out.println("medicalList" + medicalStaffList);
+//		//System.out.println("large Animal List" + smallAnimalsVetsList);
+//		
+//		int staffCount = smallAnimalsVetsList.size();
+//		System.out.println(" small vets" + staffCount);
+//		int staffCount1 = largeAnimalsVetsList.size();
+//		System.out.println("large vets" + staffCount1);
+//		int staffCount3 = laboratoriansList.size();
+//		System.out.println("laboratorians" + staffCount3);
+//		
+//		int staffCount4 = largeAnimalsVetsList.size();
+//		System.out.println("large vets" + staffCount4);
+//		int staffCount5 = laboratoriansList.size();
+//		System.out.println("laboratorians" + staffCount5);
+//		
+//		
+//		System.out.println(medicalStaffList);
+//		int staffCount2 = administrativeStaffList.size();
+//		System.out.println(staffCount2);
+//		
+//		
+//		
+//		
+		
+	}
+	
+	public String linearSearch (String name, String sname ) {
+		
+//		ArrayList<Staff> lookForStaff = new ArrayList<Staff>(); 
+		boolean found = false;
+		String inputname = name.toLowerCase().trim(); 
+		String inputsname = sname.toLowerCase().trim(); 
+		int i=0; 
+		
+		do {
+			if (staffList.get(i).getName().toLowerCase().equals(inputname) && staffList.get(i).getSurname().toLowerCase().equals(inputsname)) {
+				found = true; 
+				return "this employee woks in the clinic " + staffList.get(i).getName() + " " + staffList.get(i).getSurname() + " " + staffList.get(i).getiD() + " " + staffList.get(i).getSalaryLevel();  
+		}
+				i++;
+		}while(!found && i<staffList.size());
+		return "this employee is not working in the clinic.";
+		
+//		for (int i=0; i<staffList.size(); i++) {
+//			if() {
+//				found = true; 
+//				lookForStaff.add(staffList.get(i));
+//				
+//			}
+//		}
+//		
+//		return lookForStaff; 
+//		int i= 0; 
+//		do {
+//			System.out.println("index: " + i + "value " + pool[i]);
+//			if (pool[i]== target) {
+//				found = true; 
+//				return i; 
+//			}
+//			i++; 
+//		}
+//		while (!found && i< pool.length); 
+//		return -1;
 		
 	}
 	
