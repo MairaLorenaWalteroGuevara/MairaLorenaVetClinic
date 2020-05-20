@@ -83,6 +83,25 @@ public class Queue {
 		}
 	}
 	
+	public Animals getFirst() {
+		return first;
+	}
+
+
+	public void setFirst(Animals first) {
+		this.first = first;
+	}
+
+
+	public int getSize() {
+		return size;
+	}
+
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+	
 	@Override
 	public String toString() {
 		String toReturn = ""; 

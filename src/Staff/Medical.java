@@ -5,9 +5,10 @@ import Tasks.StaffTasks;
 
 public class Medical extends Staff {
 	
+	// I create a variable type Queue in order to generate myQueue
 	 private Queue myQueue; 
 	
-
+   // constructor of the class: 
 	public Medical(String name, String surname, int iD) {
 		super(name, surname, iD);
 		this.myQueue = new Queue();
@@ -21,7 +22,8 @@ public class Medical extends Staff {
 
 
 	public void Queue(Animals e ) {
-		myQueue.add(e); 
+		myQueue.add(e);
+	//	return myQueue; 
 		
 	}
 

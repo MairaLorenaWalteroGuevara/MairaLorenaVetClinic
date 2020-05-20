@@ -5,8 +5,17 @@ public abstract class Animals {
 	protected String name;
 	protected int age; 
 	protected String medicalCondition;
-	private Animals next; 
+	private Animals next;
+	private String type; 
 	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public Animals getNext() {
 		return next;
 	}

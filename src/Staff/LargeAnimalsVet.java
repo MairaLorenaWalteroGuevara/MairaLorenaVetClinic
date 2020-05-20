@@ -1,10 +1,6 @@
 package Staff;
 
-import java.util.Queue;
 
-import Animals.Animals;
-import Tasks.StaffTasks;
-import Tasks.VeterinarianTasks;
 
 public class LargeAnimalsVet extends Medical {
 

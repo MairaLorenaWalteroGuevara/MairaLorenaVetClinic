@@ -1,11 +1,5 @@
 package Staff;
 
-import java.util.Queue;
-
-import Animals.Animals;
-import Tasks.LaboratoryTasks;
-import Tasks.StaffTasks;
-
 
 public class Laboratorians extends Medical {
 
