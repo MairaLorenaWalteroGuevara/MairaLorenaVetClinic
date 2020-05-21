@@ -1,63 +1,29 @@
 package Staff;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+public class Administrative extends Staff {
 
-import Tasks.StaffTasks;
-import VetClinicInterfaces.InfoStaffInterface;
+	// The subclass of the Animal contain the constructor to allow us to create instances of this class. 
+	// in addition this class help to organized and divided the other subclasses when I am creating the instances.
+		
+	//In this case the Administrative class can help us to add a attribute and inherited this only to administrative subclasses
+	protected String task;
 
-public class Administrative extends Staff implements StaffTasks {
-
-	protected String onHolidays = " is on holidays "; 
-	
-	
-	
 	public Administrative(String surname, String name, int iD) {
 		super(surname, name, iD);
 		// TODO Auto-generated constructor stub
-		this.onHolidays = onHolidays;  
-		 
-	}
-	
-//	public void assingwork(ArrayList<Administrative> administrativeStaffList) {
-//		
-//	
-//		Administrative s = null;
-//		System.out.println("the employee" + s.toString());
-//
-//		
-//	}
-//	
-//	public void shuffleCollection(ArrayList<Administrative> administrativeStaffList) {
-//		
-//		Collections.shuffle(administrativeStaffList);
-//	}
-//	
-	@Override
-	public String onHolidays(Administrative staff) {
-		
-		return staff + this.onHolidays; 
-		
-	}
-	
 
-	@Override
-	public void answerEmails() {
-		// TODO Auto-generated method stub
-		
-		System.out.println("has to answers some Emails.");
 	}
 
-	@Override
-	public void dayOFF() {
-		// TODO Auto-generated method stub
-		System.out.println("has a day off.");
-		
+	//GETTERS AND SETTERS FOR THE ATTRIBUTE 
+	// methods that help to set and get the attributes from others classes
+	public String getTask() {
+		return task;
 	}
 
-	
-
-
+	// In this case The setter is receiving a Administrative staff and a string 
+	//with this information is going to create the task. 
+	public void setTask(Administrative staff, String task) {
+		this.task = staff + task;
+	}
 
 }

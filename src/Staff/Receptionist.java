@@ -1,29 +1,27 @@
 package Staff;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import Tasks.DeskTasks;
-import Tasks.StaffTasks;
-
 public class Receptionist extends Administrative {
 
-	private String answering = " is answering the phone";
-	private String filling = ", filling formats";
-	private String making= " and making apointments. ";
+	// This classes child of the child of the staff only contain:
+	// The constructor to create the instances
+	// and the variable SalaryLevel to get what salary the instance is going to have.
+
+	// The variable double to set the salary
+	// In here you can find the attribute salaryLevel set in a specific number.
+	protected double salaryLevel = 20000.0;
+
+	// the getter and setter for the attribute
+	public double getSalaryLevel() {
+		return salaryLevel;
+	}
+
+	public void setSalaryLevel(double salaryLevel) {
+		this.salaryLevel = salaryLevel;
+	}
 
 	public Receptionist(String surname, String name, int iD) {
 		super(surname, name, iD);
 		// TODO Auto-generated constructor stub
 	}
-	
 
-	public String RecTasks(Administrative staff) {
-		
-		return staff + this.answering + this.filling + this.making;
-	}
-
-	
-
-	
 }

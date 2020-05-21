@@ -1,9 +1,13 @@
 package Animals;
 
 public class Dog extends CompanionAnimals {
-
-	private String type = "Dog";
 	
+	// This classes child of the child of the Animals only contain:
+	// The constructor to create the instances
+	// and the variable type to get what kind of animal is the instance.
+	
+	private String type = "Dog";
+
 	public Dog(String name, int age, String medicalCondition) {
 		super(name, age, medicalCondition);
 		// TODO Auto-generated constructor stub
@@ -16,6 +20,5 @@ public class Dog extends CompanionAnimals {
 	public void setType(String type) {
 		this.type = type;
 	}
-
 
 }

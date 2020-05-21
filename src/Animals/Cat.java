@@ -2,14 +2,18 @@ package Animals;
 
 public class Cat extends CompanionAnimals {
 
-	private String type = "Cat";
-
-
+	// This classes child of the child of the Animals only contain: 
+	// The constructor to create the instances 
+	// and the variable type to get what kind of animal is the instance. 
+	
+	
 	public Cat(String name, int age, String medicalCondition) {
 		super(name, age, medicalCondition);
 		// TODO Auto-generated constructor stub
 	}
-	
+
+	private String type = "Cat";
+
 	public String getType() {
 		return type;
 	}

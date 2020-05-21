@@ -1,30 +1,29 @@
 package Staff;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-
-import Tasks.HRTasks;
-import Tasks.StaffTasks;
-
 public class HR extends Administrative {
 
-	protected String moralActivities = " is palaning new team activities"; 
-	protected String payment = " and making the payroll.";
-	
+	// This classes child of the child of the staff only contain:
+	// The constructor to create the instances
+	// and the variable type to get what salary the instance is going to have.
+
+	// The variable double to set the salary
+	// In here you can find the attribute salaryLevel set in a specific number.
+	protected double salaryLevel = 35000.0;
+
 	public HR(String surname, String name, int iD) {
 		super(surname, name, iD);
+
 		// TODO Auto-generated constructor stub
 	}
+
 	
-
-
-	public String hrTasks(Administrative staff) {
-		
-		return staff + moralActivities + payment;
+	// the getter and setter for the attribute
+	public double getSalaryLevel() {
+		return salaryLevel;
 	}
 
-
-	
+	public void setSalaryLevel(double salaryLevel) {
+		this.salaryLevel = salaryLevel;
+	}
 
 }

@@ -41,6 +41,12 @@ public class Information {
 	ArrayList<Rabbit> rabbit = new ArrayList<Rabbit>();
 	ArrayList<Cattle> cattle = new ArrayList<Cattle>();
 	ArrayList<Sheep> sheep = new ArrayList<Sheep>();
+	
+	ArrayList<Administrative> hrTasks = new ArrayList<Administrative>(); 
+	ArrayList<Administrative> itTasks = new ArrayList<Administrative>(); 
+	ArrayList<Administrative> receptcionistTasks = new ArrayList<Administrative>(); 
+	ArrayList<Administrative> holidays = new ArrayList<Administrative>();
+	
 
 	public Information() throws IOException {
 //		readFiles();
@@ -48,13 +54,15 @@ public class Information {
 		hierStaff();
 		Animal();
 		populateQueue();
-//		assingwork();
+		assingwork();
 //		printStaff();
 //		printSmallAnimalsVets();
 //		printLargeAnimalsVets();
 //		printAdministrativeStaff();
 //		printMedicalStaff();
 		print();
+
+
 
 	}
 
@@ -150,13 +158,17 @@ public class Information {
 		String[] livestockIlness = infoAnimals.LilvestockIlness();
 
 		int i = 0;
+		
+		int min =1;
+		int max = 15;
+		int age;
 
 		for (i = 0; i < 800; i++) {
 
 			String animalname = animalNames.get(r.nextInt(animalNames.size()));
 
-			int age = r.nextInt(15);
-
+			age = r.nextInt((max-min)+1)+min;
+           
 			String medicalCondition = (companionIlness[r.nextInt(companionIlness.length)]);
 
 			if (i <= 299) {
@@ -199,8 +211,8 @@ public class Information {
 
 			String animalname = animalNames.get(r.nextInt(animalNames.size()));
 
-			int age = r.nextInt(15);
-
+			age = r.nextInt((max-min)+1)+min;
+			
 			String medicalCondition = (livestockIlness[r.nextInt(companionIlness.length)]);
 
 			if (i >= 800 && i <= 899) {
@@ -302,38 +314,79 @@ public class Information {
 		}
 	}
 
-	public void assingwork() {
+//	public void assingwork() {
+//
+//		Random r = new Random();
+//		Administrative pick = administrativeStaffList.get(r.nextInt(administrativeStaffList.size()));
+//
+//		int i = 0;
+//
+//		for (Administrative e : administrativeStaffList) {
+//
+//			if (e == pick) {
+//				
+//				e.onHolidays();
+//
+//			} else if (e instanceof HR) {
+//
+//			System.out.println(((HR) e).Payment(e));
+//
+//			} else if (e instanceof IT) {
+//				System.out.println(((IT) e).ItTasks(e));
+//
+//			} else if (e instanceof Receptionist) {
+//
+//				System.out.println(((Receptionist) e).RecTasks(e));
+//
+//			}
+//			i++;
+//		}
+//		
+//	}
+	public Administrative assingwork() {
 
 		Random r = new Random();
 		Administrative pick = administrativeStaffList.get(r.nextInt(administrativeStaffList.size()));
 
-		int i = 0;
 
 		for (Administrative e : administrativeStaffList) {
 
 			if (e == pick) {
-
-				System.out.println(e.onHolidays(e));
+				holidays.add(e);
+				e.setTask(e, " is on holidays!");  
+				
+				
 
 			} else if (e instanceof HR) {
-
-				System.out.println(((HR) e).hrTasks(e));
+				hrTasks.add(e);
+				
+				e.setTask(e, " is palaning new team activities" + " and making the payroll.");
+				
+				
 
 			} else if (e instanceof IT) {
-				System.out.println(((IT) e).ItTasks(e));
+				itTasks.add(e);
+				e.setTask(e, " is reparing some funtion in the website" + " and adding new staff in the website.");
+
 
 			} else if (e instanceof Receptionist) {
-
-				System.out.println(((Receptionist) e).RecTasks(e));
-
+				
+				receptcionistTasks.add(e);
+				((Receptionist) e).setTask(e, " is answering the phone" + ", filling formats" + " and making apointments. ");
+		
 			}
-			i++;
+		
+			
 		}
-
+		return pick; 
+		
 	}
+	
 
+	
 	public void print() {
 
+//		System.out.print(hrTasks);
 //		System.out.println("Staff list" + staffList);
 //		System.out.println("administrative " + administrativeStaffList);
 //		System.out.println("ad" + administrativeStaffList);
@@ -373,6 +426,8 @@ public class Information {
 //		System.out.println("cattle list :" +cattle);
 //		System.out.println("sheep list :" +sheep);
 	}
+	
+	
 
 	
 	public String staffSearch(String name, String sname) {
@@ -519,7 +574,7 @@ public class Information {
 
 		return i;
 	}
-	
-	
+
+
 
 }
