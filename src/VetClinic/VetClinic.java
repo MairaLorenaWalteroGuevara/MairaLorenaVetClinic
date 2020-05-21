@@ -35,13 +35,13 @@ public class VetClinic {
 
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
 
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-
-		new VetClinic();
-//			new Information(); 
-//			new InfoAnimals(); 
-	}
+//	public static void main(String[] args) throws IOException {
+//		// TODO Auto-generated method stub
+//
+//		new VetClinic();
+////			new Information(); 
+////			new InfoAnimals(); 
+//	}
 
 	public VetClinic() throws IOException {
 
@@ -268,14 +268,14 @@ public class VetClinic {
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 				} else if (answer == 5) {
-
+					System.out.println("\n         | -------------------------------------------------------------------- |");
 					System.out.println("\n          The list of all Animals: \n");
 
 					for (Animals e : information.animalList) {
-						System.out.println("          Name: " + e.getName() + "          Age: " + e.getAge()
-								+ "          Medical condition: " + e.getMedicalCondition());
+						System.out.println("          Type: "+ e.getType()+"          Name: " + e.getName() + "          Age: " + e.getAge()
+						+ "          Medical condition: " + e.getMedicalCondition());
 					}
-
+					System.out.println("\n         | -------------------------------------------------------------------- |");
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 				} else if (answer == 6) {
 					boolean option6=false;
@@ -287,96 +287,92 @@ public class VetClinic {
 						choose = Integer.parseInt(myReader.readLine());
 
 						if (choose == 1) {
-							System.out.println("\n          List of Compaion animals: \n");
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
+							System.out.println("\n          List of Companion animals: \n");
 
-							for (int i = 0; i < information.companionAnimalsList.size(); i++) {
+							for (CompanionAnimals compaion : information.companionAnimalsList) {
 
-								CompanionAnimals compaion = information.companionAnimalsList.get(i);
-								System.out.println("          Name: " + compaion.getName() + "          Age: " + compaion.getAge()
-										+"          Type: "+ compaion.getType() +"          Medical condition: " + compaion.getMedicalCondition());
+								System.out.println("          Type: "+ compaion.getType() +"          Name: " + compaion.getName() + "          Age: " + compaion.getAge()
+										+"          Medical condition: " + compaion.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 2) {
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 							System.out.println("\n          List of Livestock animals: \n");
 
-							for (int i = 0; i < information.livestockAnimalsList.size(); i++) {
+							for (LivestockAnimals Li : information.livestockAnimalsList) {
 
-								LivestockAnimals Li = information.livestockAnimalsList.get(i);
-								System.out.println("          Name: " + Li.getName() + "          Age: " + Li.getAge()
-								+"          Type: "+ Li.getType()+ "          Medical condition: " + Li.getMedicalCondition());
+								
+								System.out.println("          Type: "+ Li.getType()+"          Name: " + Li.getName() + "          Age: " + Li.getAge()
+								+ "          Medical condition: " + Li.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 3) {
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 							System.out.println("\n          List of cats: \n");
 
-							for (int i = 0; i < information.cat.size(); i++) {
-
-								Cat cat = information.cat.get(i);
+							for (Cat cat : information.cat) {
 
 								System.out.println("          Name: " + cat.getName() + "          Age: " + cat.getAge()
-								+"          Type: "+ cat.getType()+ "          Medical condition: " + cat.getMedicalCondition());
+								+ "          Medical condition: " + cat.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 4) {
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 							System.out.println("\n          List of dogs: \n");
 
-							for (int i = 0; i < information.dog.size(); i++) {
-
-								Dog dog = information.dog.get(i);
+							for (Dog dog : information.dog) {
 
 								System.out.println("          Name: " + dog.getName() + "          Age: " + dog.getAge()
-								+"          Type: "+ dog.getType()+ "          Medical condition: " + dog.getMedicalCondition());
+								+ "          Medical condition: " + dog.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 5) {
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 							System.out.println("\n          List of rabbits: \n");
 
-							for (int i = 0; i < information.rabbit.size(); i++) {
-
-								Rabbit rab = information.rabbit.get(i);
+							for (Rabbit rab : information.rabbit) {
 
 								System.out.println("          Name: " + rab.getName() + "          Age: " + rab.getAge()
-								+"          Type: "+ rab.getType()+ "          Medical condition: " + rab.getMedicalCondition());
+								+ "          Medical condition: " + rab.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 6) {
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 							System.out.println("\n          List of cattles: \n");
 
-							for (int i = 0; i < information.cattle.size(); i++) {
-
-								Cattle cattle = information.cattle.get(i);
+							for (Cattle cattle : information.cattle) {
 								
 
 								System.out.println("          Name: " + cattle.getName() + "          Age: " + cattle.getAge()
-								+"          Type: "+ cattle.getType()+ "          Medical condition: " + cattle.getMedicalCondition());
+								+ "          Medical condition: " + cattle.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 7) {
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 							System.out.println("\n          List of sheeps: \n");
 
-							for (int i = 0; i < information.sheep.size(); i++) {
-
-								Sheep sh = information.sheep.get(i);
+							for (Sheep sh : information.sheep) {
 
 								System.out.println("          Name: " + sh.getName() + "          Age: " + sh.getAge()
-								+"          Type: "+ sh.getType()+ "          Medical condition: " + sh.getMedicalCondition());
+								+ "          Medical condition: " + sh.getMedicalCondition());
 
 							}
-
+							System.out.println("\n         | ----------------------------------------------------------------------------------------------------- |");
 						} else if (choose == 8) {
 							break;
 						}else {
-							System.out.println("\n*********** ERROR! This number is lower and bigger than the options, Could you write a number between 1 to 3?  *********** \n                       Thanks! ");
+							System.out.println("\n*********** ERROR! This number is lower and bigger than the options, Could you write a number between 1 to 8?  *********** \n                       Thanks! ");
 
 						}
 						}catch(Exception e) {
-							System.out.println("\n*********** ERROR! This options is a letter, Could you write a number between 1 to 3?  *********** \n                       Thanks! ");
+							System.out.println("\n*********** ERROR! This options is a letter, Could you write a number between 1 to 8?  *********** \n                       Thanks! ");
 							option6 =false;
 						}
 					} while (choose != 0 || !option6);
@@ -395,15 +391,16 @@ public class VetClinic {
 							System.out.println("\n---------- SORRY! This animal is not register in the clinic");
 
 						} else {
+							System.out.println("\n          This is the Animals that contain this name: \n");
 							for (Animals a : foundanimal) {
-								System.out.println("\n          This is the Animals that contain this name: \n");
-								System.out.println("\n          Name: " + a.getName() + "          Age: " + a.getAge()
+	
+								System.out.println("     |     Name: " + a.getName() + "          Age: " + a.getAge()
 								+"          Type: "+ a.getType()+ "          Medical condition: " + a.getMedicalCondition());
 							}
 						}
 
 						answer1 = getconfirmation1(
-								"If you want to looking for other animal write: " + yes + ", if not write: " + no);
+								"\n  ----------  If you want to looking for other animal write: " + yes + ", if not write: " + no);
 
 					} while (!answer1);
 
@@ -415,7 +412,7 @@ public class VetClinic {
 
 					do {
 
-						System.out.println("\n           The queue in the clinic for each Medical Staff memeber");
+						
 						displayOptions8();
 						
 						try {
@@ -439,10 +436,10 @@ public class VetClinic {
 
 							String name;
 							String sname;
-							boolean option8;
+							
 							do {
-								name = getUser("----------  Could you write the Name of the staff are you looking for: ");
-								sname = getUser("----------  Could you write the Surname of the staff are you looking for: ");
+								name = getUser("\n  ----------  Could you write the Name of the staff are you looking for: ");
+								sname = getUser("\n  ----------  Could you write the Surname of the staff are you looking for: ");
 
 								int id = information.medicalStaffSearch(name, sname);
 
@@ -450,58 +447,55 @@ public class VetClinic {
 								if (id == 0) {
 
 									System.out.println(
-											"Look for the staff again, because this employee does not work in here");
+											"\n----------  SORRY! Look for the staff again, because this employee does not work in here.");
 
 									
 								} else if (id >= 111 && id <= 125) {
 
 									int number = information.smallVetSearch(name, sname);
 									
-									System.out.println(number);
-									System.out.println("small vets");
+									
 									
 									String vetna = information.smallAnimalsVetsList.get(number).getName();
 									String vetsna = information.smallAnimalsVetsList.get(number).getSurname();
 
-									System.out.println("The veterinarian: " + vetna + " " + vetsna);
-									System.out.println(" Has the next Queue to attent:  " );
-									System.out.println(information.smallAnimalsVetsList.get(number).getMyQueue());
+									System.out.println("\n     |     The veterinarian for pets: " + vetna + " " + vetsna);
+									System.out.println("     |     Has the next Queue to attent:  " );
+									System.out.println("     |     "+information.smallAnimalsVetsList.get(number).getMyQueue());
 
 								} else if (id >= 126 && id <= 130) {
 
 									int number = information.largeVetSearch(name, sname);
 
-									System.out.println(number);
-									System.out.println("large vets");
+								
 									
 									String vetna = information.largeAnimalsVetsList.get(number).getName();
 									String vetsna = information.largeAnimalsVetsList.get(number).getSurname();
 
 
-									System.out.println("The veterinarian: " + vetna + " " + vetsna);
-									System.out.println(" Has the next Queue to attent:  " );
-									System.out.println(information.largeAnimalsVetsList.get(number).getMyQueue());
+									System.out.println("\n     |     The veterinarian for livestock animals: " + vetna + " " + vetsna);
+									System.out.println("     |     Has the next Queue to attent:  " );
+									System.out.println("     |     "+information.largeAnimalsVetsList.get(number).getMyQueue());
 
 
 								} else if (id >= 131 && id <= 140) {
 
 									int number = information.laboratoriansSearch(name, sname);
 									
-									System.out.println(number);
-									System.out.println("laboratorians");
+									
 
 									String vetna = information.laboratoriansList.get(number).getName();
 									String vetsna = information.laboratoriansList.get(number).getSurname();
 
 
-									System.out.println("The veterinarian: " + vetna + " " + vetsna);
-									System.out.println(" Has the next Queue to attent:  " );
-									System.out.println(information.laboratoriansList.get(number).getMyQueue());
+									System.out.println("\n     |     The laboratorian: " + vetna + " " + vetsna);
+									System.out.println("     |     Has the next Queue to attent:  " );
+									System.out.println("     |     "+information.laboratoriansList.get(number).getMyQueue());
 
 								}
 
 								answer1 = getconfirmation1(
-										"If you want to looking for other veterian or laboratorian write: " + yes
+										"\n  ----------  If you want to looking for other veterian or laboratorian write: " + yes
 												+ ", if not write: " + no);
 
 							} while (!answer1);
@@ -509,11 +503,11 @@ public class VetClinic {
 							break;
 
 						}else {
-							System.out.println("*********** ERROR! This number is lower and bigger than the options, Could you write a number between 1 to 3? ***********\n                       Thanks! ");
+							System.out.println("*********** ERROR! This number is lower and bigger than the options, Could you write a number between 1 to 5? ***********\n                       Thanks! ");
 
 						}
 						}catch(Exception e) {
-							System.out.println("*********** ERROR! This options is a letter, Could you write a number between 1 to 3?  *********** \n                       Thanks! ");
+							System.out.println("*********** ERROR! This options is a letter, Could you write a number between 1 to 5?  *********** \n                       Thanks! ");
 							option7 =false;
 						}
 					} while (choose != 0 || !option7);
@@ -532,8 +526,8 @@ public class VetClinic {
 					// first question about what is the name and surname of the medical staff that
 					// the user is looking for
 					do {
-						name = getUser("  ----------  Could you write the Name of the staff are you looking for:  ");
-						sname = getUser("-----------Could you write the Surname of the staff are you looking for: ");
+						name = getUser("\n  ----------  Could you write the Name of the staff are you looking for:  ");
+						sname = getUser("\n  ----------  Could you write the Surname of the staff are you looking for: ");
 
 						int id = information.medicalStaffSearch(name, sname);
 
@@ -543,7 +537,7 @@ public class VetClinic {
 						if (id == 0) {
 
 							System.out.println(
-									"----------  Look for the staff again, because this employee does not work in here  ----------");
+									"\n----------  SORRY! Look for the staff again, because this employee does not work in here  ----------");
 
 						} else if (id >= 111 && id < 126) {
 
@@ -552,7 +546,7 @@ public class VetClinic {
 
 							do {
 								answer1 = getconfirmation1(
-										"Did you finish to attent this animal, please write: " + yes + " or " + no);
+										"\n  ----------  Did you finish to attent this animal?, please write: " + yes + "\n or " + no + " if you havent finish to attent this animal and you would like to go back;");
 
 								if (answer1 == false) {
 
@@ -564,7 +558,7 @@ public class VetClinic {
 									
 
 									answer2 = getconfirmation1(
-											"\n----------  Would you like to continue with the same veterinarian, please write: "
+											"\n  ----------  Would you like to continue with the same veterinarian?, please write: "
 													+ yes + " or " + no);
 
 									if (answer2 == false) {
@@ -588,8 +582,8 @@ public class VetClinic {
 							do {
 
 								answer1 = getconfirmation1(
-										"  -----------  Did you finish to attent this animal and would you like to attent the next, please write: "
-												+ yes + " or " + no);
+										"\n  ----------  Did you finish to attent this animal and would you like to attent the next?, please write: "
+												+ yes + "\n or " + no + " if you havent finish to attent this animal and you would like to go back;");
 
 								if (answer1 == false) {
 
@@ -602,7 +596,7 @@ public class VetClinic {
 									
 
 								answer2 = getconfirmation1(
-										"\n  ----------  Would you Did you finish to attent this animal and would you like to attent the next, please write: "
+										"\n  ----------  Would you like to continue with the same veterinarian?, please write: "
 												+ yes + " or " + no);
 
 								if (answer2 == false) {
@@ -625,8 +619,8 @@ public class VetClinic {
 							do {
 
 								answer1 = getconfirmation1(
-										"\n  -----------  Did you finish to attent this animal and would you like to attent the next, please write: "
-												+ yes + " or " + no);
+										"\n  ----------  Did you finish to attent this animal and would you like to attent the next?, please write: "
+												+ yes + "\n or " + no + " if you havent finish to attent this animal and you would like to go back;");
 
 								if (answer1 == false) {
 
@@ -637,8 +631,8 @@ public class VetClinic {
 
 									laboratoriansQueue(number);
 
-								answer2 = getconfirmation1("\n  ----------  Would like to continue with the same laboratorian, please write " + yes
-										+               ",\n  ----------  if not write " + no + "and you will can look for other Medical Staff");
+								answer2 = getconfirmation1("\n  ----------  Would like to continue with the same laboratorian?, please write " + yes
+										+               " or " + no );
 
 								if (answer2 == false) {
 									flag = false;
@@ -655,14 +649,15 @@ public class VetClinic {
 //--------------//-----------------FINISH TO PRINT --------------------------------------------------//
 
 						answer3 = getconfirmation1(
-								"  ----------  Would you like to look for other Medial Staff, please write " + yes
+								"\n  ----------  Would you like to look for other Medial Staff?, please write " + yes
 										+ " if not write " + no);
 
 					} while (!answer3);
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 				} else if (answer == 10) {
-					System.out.println("The hiher numbers are: ");
+					System.out.println("\n  ----------------  THANK YOU FOR VISIT US, HAVE A GOOD DAY   ----------------  ");
+					break;
 				}
 
 // +++++++++++++++++++++++++++++++++++++ FINISH OPTION  ++++++++++++++++++++++++++++++++++++++++++++++++++++//
@@ -687,7 +682,7 @@ public class VetClinic {
 // +++++++++++++++++++++++++++++++++++++ DISPLAY METHOD  ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 	public void displayOptions() {
 
-		System.out.println("\n          What it is the method that you want to use\n");
+		System.out.println("\n          What it is the option you want to use:\n");
 		System.out.println("          1.  List of all the staff");
 		System.out.println("          2.  List the staff by category ");
 		System.out.println("          3.  List of the Administrative Staff who are performing a specific task");
@@ -696,18 +691,18 @@ public class VetClinic {
 		System.out.println("          6.  List the animals by type");
 		System.out.println("          7.  Search for a specific animal by name");
 		System.out.println("          8.  List all the animals assigned to a member of medical staff");
-		System.out.println("          9.  What is the animal that is be attending for a specific staff and get Next");
-		System.out.println("          10. Dont do more\n");
+		System.out.println("          9.  What is the animal that is be attending for a specific medical staff and get Next");
+		System.out.println("          10. Finish to search\n");
 
 	}
 
 	public void displayOptions2() {
 
-		System.out.println("\n          Choose what category you want\n ");
+		System.out.println("\n          Choose what list you want to see:\n ");
 		System.out.println("          1.  List of Medical staff ");
 		System.out.println("          2.  List of Administrative staff ");
-		System.out.println("          3.  List of Small Animals Veterinarias");
-		System.out.println("          4.  List of Large Animals Veterinarias");
+		System.out.println("          3.  List of Veterinarias of pets");
+		System.out.println("          4.  List of Veterinarias for livestock animals");
 		System.out.println("          5.  List of Laboratorians ");
 		System.out.println("          6.  List of Receptionist staff");
 		System.out.println("          7.  List of IT staff");
@@ -718,8 +713,8 @@ public class VetClinic {
 
 	public void displayOptions4() {
 		System.out.println("\n          Choose how would you like to seach the staff:\n");
-		System.out.println("          1. Look for Name or Surname");
-		System.out.println("          2. Look for Full Name ");
+		System.out.println("          1. Look for similar Name or Surname");
+		System.out.println("          2. Look for specific Full Name ");
 		System.out.println("          3. Go back to the main options \n");
 
 		
@@ -740,7 +735,7 @@ public class VetClinic {
 
 	public void displayOptions8() {
 
-		System.out.println("\n          Choose the option would you like to use:\n ");
+		System.out.println("\n          Choose what queue would you like to see:\n ");
 		System.out.println("          1.  Queues of each Veterinarian for pets");
 		System.out.println("          2.  Queues of each Veterinarian for Livestosck animals. ");
 		System.out.println("          3.  Queues of each Laboratorians");
@@ -896,7 +891,7 @@ public class VetClinic {
 				}
 			} catch (Exception e) {
 				valid = false; // happen after try.
-				System.out.println("\n***********  ERROR! you did not eneter a valid option!  ***********\n");
+				System.out.println("\n***********  ERROR! you did not enter a valid option!  ***********\n");
 			}
 		} while (!valid);
 		return input;
@@ -947,7 +942,7 @@ public class VetClinic {
 		String type1 = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
 		System.out.println("\n      |       The next animal to attent is a:\n      | " + "\n      |        * Type: "
-				+ type1 + "\n      |        with next information:\n      |  ");
+				+ type1+ "\n      |" + "\n      |        With next information:\n      |  ");
 		System.out.println("      |        * Name: " + na1 + "\n      |        * Age: " + age1
 				+ "\n      |        * Medical condition: " + med1);
 
@@ -1014,7 +1009,7 @@ public void laboratoriansHoleQueue() {
 		String type1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
 		System.out.println("\n      |       The next animal to attent is a:\n      | " + "\n      |        * Type: "
-				+ type1 + "\n      |        with next information:\n      |  ");
+				+ type1+ "\n      |" + "\n      |        With next information:\n      |  ");
 		System.out.println("      |        * Name: " + na1 + "\n      |        * Age: " + age1
 				+ "\n      |        * Medical condition: " + med1);
 
@@ -1048,7 +1043,7 @@ public void laboratoriansHoleQueue() {
 		String type1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getType();
 
 		System.out.println("\n      |       The next animal to attent is a:\n      | " + "\n      |        * Type: "
-				+ type1 + "\n      |        with next information:\n      |  ");
+				+ type1 + "\n      |"+ "\n      |        With next information:\n      |  ");
 		System.out.println("      |        * Name: " + na1 + "\n      |        * Age: " + age1
 				+ "\n      |        * Medical condition: " + med1);
 

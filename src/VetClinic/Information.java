@@ -167,6 +167,9 @@ public class Information {
 				companionAnimalsList.add(nextAnimal1);
 				cat.add(nextAnimal2);
 
+//				System.out.println(nextAnimal);
+//				System.out.println(nextAnimal1);
+//				System.out.println(nextAnimal2);
 			} else if (i >= 300 && i <= 599) {
 
 				Animals nextAnimal = new Dog(animalname, age, medicalCondition);
@@ -176,6 +179,9 @@ public class Information {
 				companionAnimalsList.add(nextAnimal1);
 				dog.add(nextAnimal2);
 
+//				System.out.println(nextAnimal);
+//				System.out.println(nextAnimal1);
+//				System.out.println(nextAnimal2);
 			} else if (i >= 600 && i <= 799) {
 				Animals nextAnimal = new Rabbit(animalname, age, medicalCondition);
 				CompanionAnimals nextAnimal1 = new Rabbit(animalname, age, medicalCondition);
@@ -183,6 +189,9 @@ public class Information {
 				animalList.add(nextAnimal);
 				companionAnimalsList.add(nextAnimal1);
 				rabbit.add(nextAnimal2);
+//				System.out.println(nextAnimal);
+//				System.out.println(nextAnimal1);
+//				System.out.println(nextAnimal2);
 			}
 		}
 
@@ -201,6 +210,9 @@ public class Information {
 				animalList.add(nextAnimal);
 				livestockAnimalsList.add(nextAnimal1);
 				cattle.add(nextAnimal2);
+//				System.out.println(nextAnimal);
+//				System.out.println(nextAnimal1);
+//				System.out.println(nextAnimal2);
 
 			} else if (i >= 900) {
 				Animals nextAnimal = new Sheep(animalname, age, medicalCondition);
@@ -209,6 +221,9 @@ public class Information {
 				animalList.add(nextAnimal);
 				livestockAnimalsList.add(nextAnimal1);
 				sheep.add(nextAnimal2);
+//				System.out.println(nextAnimal);
+//				System.out.println(nextAnimal1);
+//				System.out.println(nextAnimal2);
 
 			}
 
@@ -350,7 +365,13 @@ public class Information {
 //		
 //		
 //		
-
+//		System.out.println("Animal list :" + animalList);
+//		System.out.println("pet list :" +companionAnimalsList);
+//		System.out.println("cat list :" +cat);
+//		System.out.println("dog list :" +dog);
+//		System.out.println("rabbit list :" +rabbit);
+//		System.out.println("cattle list :" +cattle);
+//		System.out.println("sheep list :" +sheep);
 	}
 
 	
