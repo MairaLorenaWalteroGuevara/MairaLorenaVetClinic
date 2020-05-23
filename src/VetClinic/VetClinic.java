@@ -1475,14 +1475,14 @@ public class VetClinic {
 	// 3. Print the nest animal in the QUEUE for a specific medical staff.
 
 	// ----------------- QUEUES OF THE VETERINARIAS FOR PETS ------------------//
-	
-	// Print the hole QUEUE 
+
+	// Print the hole QUEUE
 	public void smallVetsHoleQueue() {
 		System.out.println("\n          The queue in the clinic for each Small Veterinarian: ");
 
-		// FOR loop to read each instance inside of the ArrayList 
+		// FOR loop to read each instance inside of the ArrayList
 		for (int i = 0; i < information.smallAnimalsVetsList.size(); i++) {
-			// to get the name and surname for each instance of the Array List 
+			// to get the name and surname for each instance of the Array List
 			String smname = information.smallAnimalsVetsList.get(i).getName();
 			String smsname = information.smallAnimalsVetsList.get(i).getSurname();
 
@@ -1494,11 +1494,12 @@ public class VetClinic {
 
 	}
 
-	//Print the first animal of the Queue for a specific medical staff 
-	// This method received the number of the position in the ArrayList 
+	// Print the first animal of the Queue for a specific medical staff
+	// This method received the number of the position in the ArrayList
 	public void smallVetsQueue(int number) {
 
-		// with this number, it will obtain the information of the instance and the information of the first animal of the queue.  
+		// with this number, it will obtain the information of the instance and the
+		// information of the first animal of the queue.
 		String vetna = information.smallAnimalsVetsList.get(number).getName();
 		String vetsna = information.smallAnimalsVetsList.get(number).getSurname();
 		String na = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
@@ -1506,7 +1507,7 @@ public class VetClinic {
 		String med = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getMedicalCondition();
 		String type = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
-		// Print it 
+		// Print it
 		System.out.println("\n     |        The Veterinarian for pets :\n     |" + "\n     |        " + vetna + " "
 				+ vetsna + "\n     |" + "\n     |        At the moment is attending a:\n     |"
 				+ "\n     |        Type: " + type + "\n     |" + "\n     |        With next information:" + "\n     |"
@@ -1515,16 +1516,21 @@ public class VetClinic {
 
 	}
 
-	// Print the next animal of the Queue for a specific medical staff 
-	// In order to get the specific medical staff, this method received the position of the Array List of this particular medical staff. 
+	// Print the next animal of the Queue for a specific medical staff
+	// In order to get the specific medical staff, this method received the position
+	// of the Array List of this particular medical staff.
 	public void nextsmallAnimalQueue(int number) {
 
-		// in here, whit the position we get the instance and the queue, then we call the remove method from QUEUE class. 
-		// this line is going to remove the first animal in the queue of this particular medical staff. 
-		// then the first animal is going to change for the next animal, and the next is going to change for the next next. 
+		// in here, whit the position we get the instance and the queue, then we call
+		// the remove method from QUEUE class.
+		// this line is going to remove the first animal in the queue of this particular
+		// medical staff.
+		// then the first animal is going to change for the next animal, and the next is
+		// going to change for the next next.
 		information.smallAnimalsVetsList.get(number).getMyQueue().remove();
-		
-		//After we have removed the fist animal in the queue, we only need to print again the first animal in the QUEUE, adn we will obtain the next one. . 
+
+		// After we have removed the fist animal in the queue, we only need to print
+		// again the first animal in the QUEUE, adn we will obtain the next one. .
 
 		String na1 = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
 		double age1 = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getAge();
@@ -1539,18 +1545,19 @@ public class VetClinic {
 
 	}
 
-	// ----------------- QUEUES OF THE VETERINARIAS FOR LIVESTOCK ANIMALS  ------------------//
-	// THE CODE IS THE SAME TO THE QUEUES FOR VETERINARIANS FOR PETS, THE ONLY CHANGE IS THE ARRAY LIST. 
-	
-	
+	// ----------------- QUEUES OF THE VETERINARIAS FOR LIVESTOCK ANIMALS
+	// ------------------//
+	// THE CODE IS THE SAME TO THE QUEUES FOR VETERINARIANS FOR PETS, THE ONLY
+	// CHANGE IS THE ARRAY LIST.
+
 	public void largeVetsHoleQueue() {
 
 		System.out.println("\n          The queue in the clinic for each livestock Veterinarian: ");
 
-		// FOR loop to read each instance inside of the ArrayList 
+		// FOR loop to read each instance inside of the ArrayList
 		for (int i = 0; i < information.largeAnimalsVetsList.size(); i++) {
 
-			// to get the name and surname for each instance of the Array List 
+			// to get the name and surname for each instance of the Array List
 			String laname = information.largeAnimalsVetsList.get(i).getName();
 			String lasname = information.largeAnimalsVetsList.get(i).getSurname();
 
@@ -1562,11 +1569,12 @@ public class VetClinic {
 
 	}
 
-	//Print the first animal of the Queue for a specific medical staff 
-	// This method received the number of the position in the ArrayList 
+	// Print the first animal of the Queue for a specific medical staff
+	// This method received the number of the position in the ArrayList
 	public void largeVetsQueue(int number) {
 
-		// with this number, it will obtain the information of the instance and the information of the first animal of the queue.  
+		// with this number, it will obtain the information of the instance and the
+		// information of the first animal of the queue.
 		String vetna = information.largeAnimalsVetsList.get(number).getName();
 		String vetsna = information.largeAnimalsVetsList.get(number).getSurname();
 		String na = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
@@ -1583,16 +1591,21 @@ public class VetClinic {
 
 	}
 
-	// Print the next animal of the Queue for a specific medical staff 
-	// In order to get the specific medical staff, this method received the position of the Array List of this particular medical staff. 
+	// Print the next animal of the Queue for a specific medical staff
+	// In order to get the specific medical staff, this method received the position
+	// of the Array List of this particular medical staff.
 	public void nextlargeAnimalQueue(int number) {
 
-		// in here, whit the position we get the instance and the queue, then we call the remove method from QUEUE class. 
-				// this line is going to remove the first animal in the queue of this particular medical staff. 
-				// then the first animal is going to change for the next animal, and the next is going to change for the next next. 
+		// in here, whit the position we get the instance and the queue, then we call
+		// the remove method from QUEUE class.
+		// this line is going to remove the first animal in the queue of this particular
+		// medical staff.
+		// then the first animal is going to change for the next animal, and the next is
+		// going to change for the next next.
 		information.largeAnimalsVetsList.get(number).getMyQueue().remove();
 
-		//After we have removed the fist animal in the queue, we only need to print again the first animal in the QUEUE, adn we will obtain the next one.
+		// After we have removed the fist animal in the queue, we only need to print
+		// again the first animal in the QUEUE, adn we will obtain the next one.
 		String na1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
 		double age1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getAge();
 		String med1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getMedicalCondition();
@@ -1606,10 +1619,10 @@ public class VetClinic {
 
 	}
 
-	
-	// --------------------- QUEUES OF THE LABORATORIANS  ------------------------//
-		// THE CODE IS THE SAME TO THE QUEUES FOR VETERINARIANS FOR PETS, THE ONLY CHANGE IS THE ARRAY LIST. 
-		
+	// --------------------- QUEUES OF THE LABORATORIANS ------------------------//
+	// THE CODE IS THE SAME TO THE QUEUES FOR VETERINARIANS FOR PETS, THE ONLY
+	// CHANGE IS THE ARRAY LIST.
+
 	public void laboratoriansHoleQueue() {
 
 		System.out.println("\n          The queue in the clinic for each Laboratorian: ");
@@ -1617,7 +1630,7 @@ public class VetClinic {
 		// FOR loop to read each instance inside of the ArrayList
 		for (int i = 0; i < information.laboratoriansList.size(); i++) {
 
-			// to get the name and surname for each instance of the Array List 
+			// to get the name and surname for each instance of the Array List
 			String labname = information.laboratoriansList.get(i).getName();
 			String labsname = information.laboratoriansList.get(i).getSurname();
 
@@ -1629,13 +1642,14 @@ public class VetClinic {
 		}
 
 	}
-	
-	//Print the first animal of the Queue for a specific medical staff 
-	// This method received the number of the position in the ArrayList 
+
+	// Print the first animal of the Queue for a specific medical staff
+	// This method received the number of the position in the ArrayList
 
 	public void laboratoriansQueue(int number) {
 
-		// with this number, it will obtain the information of the instance and the information of the first animal of the queue.  
+		// with this number, it will obtain the information of the instance and the
+		// information of the first animal of the queue.
 		String vetna = information.laboratoriansList.get(number).getName();
 		String vetsna = information.laboratoriansList.get(number).getSurname();
 		String na = information.laboratoriansList.get(number).getMyQueue().getFirst().getName();
@@ -1651,16 +1665,21 @@ public class VetClinic {
 
 	}
 
-	//Print the next animal of the Queue for a specific medical staff 
-	// In order to get the specific medical staff, this method received the position of the Array List of this particular medical staff. 
+	// Print the next animal of the Queue for a specific medical staff
+	// In order to get the specific medical staff, this method received the position
+	// of the Array List of this particular medical staff.
 	public void nextlaboratoriansQueue(int number) {
 
-		// in here, whit the position we get the instance and the queue, then we call the remove method from QUEUE class. 
-				// this line is going to remove the first animal in the queue of this particular medical staff. 
-				// then the first animal is going to change for the next animal, and the next is going to change for the next next. 
+		// in here, whit the position we get the instance and the queue, then we call
+		// the remove method from QUEUE class.
+		// this line is going to remove the first animal in the queue of this particular
+		// medical staff.
+		// then the first animal is going to change for the next animal, and the next is
+		// going to change for the next next.
 		information.laboratoriansList.get(number).getMyQueue().remove();
 
-		//After we have removed the fist animal in the queue, we only need to print again the first animal in the QUEUE, adn we will obtain the next one.
+		// After we have removed the fist animal in the queue, we only need to print
+		// again the first animal in the QUEUE, adn we will obtain the next one.
 		String na1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getName();
 		double age1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getAge();
 		String med1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getMedicalCondition();
