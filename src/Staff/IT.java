@@ -1,10 +1,6 @@
 package Staff;
 
-import java.util.ArrayList;
-import java.util.Random;
 
-import Tasks.ComputerTasks;
-import Tasks.StaffTasks;
 
 public class IT extends Administrative {
 	// This classes child of the child of the staff only contain:

@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-import VetClinic.Information;
+
 import VetClinic.VetClinic;
 
 public class Client {

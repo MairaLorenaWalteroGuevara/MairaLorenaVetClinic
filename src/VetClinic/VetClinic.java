@@ -291,7 +291,7 @@ public class VetClinic {
 							// while of the option 2
 						} catch (Exception e) {
 							System.out.println(
-									"\n*********** ERROR! This is not a number, Please write a number between 1 to 9  ***********  \n                                              Thanks! ");
+									"\n*********** ERROR! This is not a number or contain spaces, Please write a number between 1 to 9 without spaces  ***********  \n                                              Thanks! ");
 							// whit this false the user will continue in the do - while of the option 2
 							choose1 = false;
 						}
@@ -520,7 +520,7 @@ public class VetClinic {
 							// of the option 4
 						} catch (Exception e) {
 							System.out.println(
-									"\n*********** ERROR! This options is a letter, please write a number between 1 to 3  *********** \n                       Thanks! ");
+									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 3 without spaces *********** \n                       Thanks! ");
 							// whit this false, the user will continue in the do - while of the option 4
 							choose4 = false;
 						}

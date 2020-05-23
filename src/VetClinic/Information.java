@@ -1,15 +1,8 @@
 package VetClinic;
 
 import java.io.IOException;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
-import java.util.jar.Attributes.Name;
-
 import Animals.Animals;
 import Animals.Cat;
 import Animals.Cattle;
