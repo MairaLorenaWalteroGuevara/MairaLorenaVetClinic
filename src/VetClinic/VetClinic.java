@@ -27,34 +27,41 @@ import Staff.Staff;
 
 public class VetClinic {
 
-	// This class is the printing class, in here I called all the methods from
-	// Information class,
-	// and instances from the subclasses of Animals and Staff
+	// This class is the printing class, in here I used the methods from
+	// Information class to give the answer to the user.
+	// In addition I used the instances from the subclasses of Animals and Staff,
+	// to get the attributes of each instance.
+	// In some parts I am going to write an improve suggestion that could be change
+	// later or take in mind for the future codes.
 
-	// The Main class I am using in here is Information, is for this reason that I
-	// need a instance of Information call information
+	// The Main class I am using in here is Information, for this reason, I
+	// need a instance of Information, for practical use I call this instance
+	// information.
 	Information information;
 
-	// Buffer is what I am using to get the user input, I am calling in here because
-	// is practical,
-	// allow me to call only ones and using every time I needed.
+	// I am using BufferReader to get the user input, I am calling in here because
+	// is more practical.
+	// because it's allow me to code the Bufferreader ones and using every time I
+	// needed to get the user input.
 	BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
 
 	public VetClinic() throws IOException {
 
-		// initialized the information instance from Information class
+		// I am initialized the information instance from Information class
 		information = new Information();
 
 		// Variable integer for get the number of the answer, in order to choose the
-		// main options. This variable could be a string and allow to the user make more
-		// mistakes like spaces after the input.
+		// main options.
+		// To improve: This variable could be a string and allow to the user make more
+		// mistakes like have a spaces before or after the input.
 		int answer = 0;
-		// boolean to break the do principle do - while for the main options
+		// boolean variable to break the principle do - while for the main options
 		boolean option = false;
 		// String options for yes and no to print the same in each question
 		String yes = "yes";
 		String no = "no";
-		// boolean variable to get the option yes or no for the question to keep doing
+		// boolean variable to get the option yes or no, when I am asking to the user to
+		// keep doing
 		// the same action or not.
 		boolean answer1;
 
@@ -62,9 +69,10 @@ public class VetClinic {
 		do {
 			// display the main options
 			displayOptions();
-			// try and catch to catch the wrong input for the answers
+			// try and catch to catch the wrong input
 			try {
-				// get the input from the user; this need to be a number between 1 to 10,
+				// I used Integer.parseInt to get the integer input from the user; this input
+				// need to be a number between 1 to 10,
 				// without spaces after or before the input.
 				answer = Integer.parseInt(myReader.readLine());
 				option = true;
@@ -73,14 +81,14 @@ public class VetClinic {
 				if (answer <= 0) {
 					System.out.println(
 							"\n*********** ERROR!, This option is not correct, please enter a number between 1 to 10  *********** \n");
-					// the main boolean is false, in order to keep in the main boolean
+					// the main boolean is false, in order to keep the user in the main boolean
 					option = false;
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 					// THE FISRT OPTION IS TO PRINT THE LIST OF THE STAFF
 				} else if (answer == 1) {
 
-					// Print the line to separate the list of the line before
+					// Print the line to separate the list from the line before
 					System.out.println(
 							"\n         | -------------------------------------------------------------------- |");
 					System.out.println("\n          The list of our staff is: \n");
@@ -115,7 +123,9 @@ public class VetClinic {
 						displayOptions2();
 						// try and catch to catch the wrong input for the choose variable
 						try {
-							// get the input and save in choose variable
+							// I used Integer.parseInt to get the integer input from the user; this input
+							// need to be a number between 1 to 9,
+							// without spaces after or before the input.
 							choose = Integer.parseInt(myReader.readLine());
 
 							// -----------------------CHOOSE 1 -----------------------------//
@@ -163,7 +173,7 @@ public class VetClinic {
 								// Print the list of the veterinarians for pets
 								System.out.println(
 										"\n         | -------------------------------------------------------------------- |");
-								System.out.println("\n          List of our veterinarians for pets is: \n");
+								System.out.println("\n          List of our pet veterinarians: \n");
 
 								// FOR loop to get a SmallAnimalsVet instance for each element inside of the
 								// smallAnimalsVetsList and print it.
@@ -183,7 +193,7 @@ public class VetClinic {
 								System.out.println(
 										"\n         | -------------------------------------------------------------------- |");
 								System.out
-										.println("\n          List of our veterinarians for livestock animals is: \n");
+										.println("\n          List of our livestock veterinarians: \n");
 
 								// FOR loop to get a LargeAnimalsVet instance for each element inside of the
 								// largeAnimalsVetsList and print it.
@@ -274,39 +284,41 @@ public class VetClinic {
 
 								// -----------------------CHOOSE -----------------------------//
 							} else if (choose == 9) {
-								// break the do -while loop and go back to the main do - while, so it go back to
-								// the main options.
+								// break the do -while loop and go back to the main do - while, so it goes back
+								// to the main options.
 								break;
 							} else {
-								// if the number is bigger or lower of the options this else is going to print
+								// if the number is bigger or lower of the options this ELSE is going to print
 								// the error message
 								System.out.println(
-										"\n*********** ERROR! This number is lower or bigger than the options, Could you write a option between 1 to 9?  ***********  \n                                      Thanks! ");
-								// and the boolean will be false and the user will be in the do - while loop for
+										"\n*********** ERROR! This number is lower or bigger than the options, Could you write a option between 1 to 9?  ***********  \n                                      Thanks! \n");
+								// and because the boolean is false, the user will be in the do - while loop for
 								// the option 2.
 								choose1 = false;
 							}
-							// catch is to avoid that a error input will break the program.
+							// this catch avoid the unforeseen errors in the input, that could be break the
+							// program.
 							// it will print the error and go back to the display options 2 in the do -
 							// while of the option 2
 						} catch (Exception e) {
 							System.out.println(
-									"\n*********** ERROR! This is not a number or contain spaces, Please write a number between 1 to 9 without spaces  ***********  \n                                              Thanks! ");
+									"\n*********** ERROR! This is not a number or contain spaces, Please write a number between 1 to 9 without spaces  ***********  \n                                              Thanks! \n");
 							// whit this false the user will continue in the do - while of the option 2
 							choose1 = false;
 						}
 						// the do - While is running for the options different to zero, and is going to
-						// break when the boolean choose1 is true or whit the option 9 that breaks the
+						// break, when the boolean choose1 is true or whit the user choose the option 9
+						// that breaks the
 						// loop .
 					} while (choose != 0 || !choose1);
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 					// THE THIRD OPTION GIVE THE OPTION TO PRINT THE ADMINISTRATIVE STAFF THAT IS
 					// PERFORMIN A SPECIFIC TASK
-					// In this method I printed each array that contain the instance with the task
+					// In this option I printed each array that contain the instance with the task
 					// attribute.
-					// in order to do this, first I read the array that contain the instance in the
-					// task attibute,
+					// In order to do this, first I get each instances inside of the array that
+					// contain the instance with the task attribute,
 					// second for each instance I get the task attribute,
 					// finally I print it.
 				} else if (answer == 3) {
@@ -322,7 +334,9 @@ public class VetClinic {
 						// try and catch to catch the wrong input for the choose3 variable
 
 						try {
-							// get the input and save in choose3 variable
+							// I used Integer.parseInt to get the integer input from the user; this input
+							// need to be a number between 1 to 6,
+							// without spaces after or before the input.
 							option3 = Integer.parseInt(myReader.readLine());
 
 							// -----------------------OPTION 1 -----------------------------//
@@ -342,7 +356,8 @@ public class VetClinic {
 								// FOR loop to get an Administrative instance for each element inside of the
 								// holidays ArrayList
 								for (Administrative e : information.holidays) {
-									// with the instance get the task (attribute of Administrative staff) and print
+									// with the instance I will get the task (attribute of Administrative staff) and
+									// print
 									// it.
 									System.out.println("          Name: " + e.getTask());
 
@@ -350,10 +365,11 @@ public class VetClinic {
 
 								// -----------------------OPTION 3 -----------------------------//
 							} else if (option3 == 3) {
-								// FOR loop to get an Administrative instance for each element inside of the
+								// FOR loop to get each element (type Administrative instance) inside of the
 								// hrTasks ArrayList
 								for (Administrative e : information.hrTasks) {
-									// with the instance get the task (attribute of Administrative staff) and print
+									// with the instance I will get the task (attribute of Administrative staff) and
+									// print
 									// it.
 									String task = e.getTask();
 
@@ -363,10 +379,11 @@ public class VetClinic {
 
 								// -----------------------OPTION 4 -----------------------------//
 							} else if (option3 == 4) {
-								// FOR loop to get an Administrative instance for each element inside of the
+								// FOR loop to get each element (type Administrative instance) inside of the
 								// itTasks ArrayList
 								for (Administrative e : information.itTasks) {
-									// with the instance get the task (attribute of Administrative staff) and print
+									// with the instance I will get the task (attribute of Administrative staff) and
+									// print
 									// it.
 									String task = e.getTask();
 
@@ -376,10 +393,11 @@ public class VetClinic {
 
 								// -----------------------OPTION 5 -----------------------------//
 							} else if (option3 == 5) {
-								// FOR loop to get an Administrative instance for each element inside of the
+								// FOR loop to get each element (type Administrative instance) inside of the
 								// receptcionistTasks ArrayList
 								for (Administrative e : information.receptcionistTasks) {
-									// with the instance get the task (attribute of Administrative staff) and print
+									// with the instance I will get the task (attribute of Administrative staff) and
+									// print
 									// it.
 									String task = e.getTask();
 									System.out.println("          Name: " + task);
@@ -387,7 +405,8 @@ public class VetClinic {
 								}
 
 								// -----------------------OPTION 6 -----------------------------//
-								// break the loop and go to the main do - while with the main options
+								// this option breaks the loop and go to the main do - while with the main
+								// options
 							} else if (option3 == 6) {
 								break;
 							} else {
@@ -395,16 +414,16 @@ public class VetClinic {
 								// the error message
 
 								System.out.println(
-										"\n*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 3  *********** \n                       Thanks! ");
+										"\n*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 3  *********** \n                       Thanks! \n");
 
 							}
-							// catch is to avoid that a error input will break the program.
-							// it will print the error and go back to the display options 2 in the do -
-							// while of the option 2
-
+							// this catch avoid the unforeseen errors in the input, that could be break the
+							// program.
+							// it will print the error and go back to the display options 3 in the do -
+							// while of the option 3
 						} catch (Exception e) {
 							System.out.println(
-									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 3 without spaces *********** \n                       Thanks! ");
+									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 3 without spaces *********** \n                       Thanks! \n");
 							// whit this false the user will continue in the do - while of the option 3
 							choose3 = false;
 						}
@@ -414,7 +433,7 @@ public class VetClinic {
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 					// THE FOURTH OPTION GIVE THE OPTION TO SEARCH THE STAFF BY NAME, SURNAME , AND
-					// BY FULL NAME
+					// FULL NAME
 
 				} else if (answer == 4) {
 					// integer variable to get the number for the sub menu
@@ -422,12 +441,14 @@ public class VetClinic {
 					// boolean for the do - while for the second option
 					boolean choose4 = false;
 					do {
-						// display the fourht options
+						// display the fourth options
 						displayOptions4();
 						// try and catch to catch the wrong input for the choose4 variable
 						try {
 
-							// get the input and save in choose4 variable
+							// I used Integer.parseInt to get the integer input from the user; this input
+							// need to be a number between 1 to 3,
+							// without spaces after or before the input.
 							option4 = Integer.parseInt(myReader.readLine());
 
 							// -----------------------OPTION 1 -----------------------------//
@@ -437,12 +458,12 @@ public class VetClinic {
 							if (option4 == 1) {
 
 								String name;
-								// do -while loop to run until the user do not want to look for other staff
+								// do -while loop to run until, the user do not want to look for other staff
 								// member
 								do {
-									// I am getting the input in other method call get User, that also validate the
+									// I will get the input in getUser method, this method will validate the
 									// input.
-									// I am only sending the prompt to print the question, and I will get the input
+									// I am only sending the prompt to print the statement, and I will get the input
 									// after it has passed the validation.
 									name = getUser(
 											"\n   ----------  Please write the Name or Surname of the staff you are looking for: \n");
@@ -451,9 +472,9 @@ public class VetClinic {
 									// in Information class.
 									information.staffnameSearch(name.toLowerCase().trim());
 
-									// I am sending a prompt again to the get confirmation method. In that method I
-									// am getting the input for yes or not and validate the input.
-									// After the input is validate, I will receive a true or false in answer1
+									// I am sending a prompt to the getconfirmation method. In that method I
+									// am getting the input for the word yes or not and validate the input.
+									// After the input is validated, I will receive a true or false in answer1
 									// boolean variable.
 									answer1 = getconfirmation1(
 											"\n   ----------  If you want to look for other staff write: " + yes
@@ -465,9 +486,10 @@ public class VetClinic {
 								} while (!answer1);
 
 								// -----------------------OPTION 2 -----------------------------//
-								// IF THE OPTION IS 1 THE USER CAN SEACH BY SPECIFIC NAME AND SURNAME
-								// In here the search is specific. This method will a unique member of the
-								// staff, who contains the input name and surname.
+								// IF THE OPTION IS 2 THE USER CAN SEACH BY SPECIFIC NAME AND SURNAME
+								// In here the search is specific. This method will look for a unique member of
+								// the
+								// staff, who contains the specific input name and surname.
 							} else if (option4 == 2) {
 
 								// to string variables for name and surname
@@ -476,26 +498,26 @@ public class VetClinic {
 								// do -while loop to run until the user do not want to look for other staff
 								// member
 								do {
-									// I am getting the input in other method call get User, that also validate the
+									// I will get the input in getUser method, this method will validate the
 									// input.
-									// I am only sending the prompt to print the question, and I will get the input
-									// until it has passed the validation.
+									// I am only sending the prompt to print the statement, and I will get the input
+									// after it has passed the validation.
 									name = getUser(
-											"\n   ----------  Please write the Name of the staff you are looking for: ");
+											"\n   ----------  Please write the Name of the staff you are looking for: \n");
 									sname = getUser(
-											"\n   ----------  Please write the Surname of the staff  you are looking for: ");
+											"\n   ----------  Please write the Surname of the staff  you are looking for: \n");
 
 									// I am sending the input to the search method in Information class, and print
 									// the return message.
 									System.out.println(information.staffSearch(name, sname));
 
-									// I am sending a prompt again to the get confirmation method. In that method I
-									// am getting the input for yes or not and validate the input.
-									// After the input is validate, I will receive a true or false in answer1
+									// I am sending a prompt to the getconfirmation method. In that method I
+									// am getting the input for the word yes or not and validate the input.
+									// After the input is validated, I will receive a true or false in answer1
 									// boolean variable.
 									answer1 = getconfirmation1(
 											"\n   ----------  If you want to look for other staff write: " + yes
-													+ ", if not write: " + no);
+													+ ", if not write: " + no + "\n");
 									// if the answer1 is yes, The user will be continue in the loop for option 2 of
 									// option 4.
 									// but if the answer1 is no, I will obtain a true and the loop will break and
@@ -512,15 +534,16 @@ public class VetClinic {
 								// the error message
 
 								System.out.println(
-										"\n*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 3  *********** \n                       Thanks! ");
+										"\n*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 3  *********** \n                       Thanks! \n");
 
 							}
-							// catch is to avoid that an error input will break the program.
-							// it will print the error and go back to the display options4 to the do - while
-							// of the option 4
+							// this catch avoid the unforeseen errors in the input, that could be break the
+							// program.
+							// it will print the error and go back to the display options 4 in the do -
+							// while of the option 4
 						} catch (Exception e) {
 							System.out.println(
-									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 3 without spaces *********** \n                       Thanks! ");
+									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 3 without spaces *********** \n                       Thanks! \n");
 							// whit this false, the user will continue in the do - while of the option 4
 							choose4 = false;
 						}
@@ -536,8 +559,8 @@ public class VetClinic {
 					System.out.println("\n          The list of all Animals: \n");
 					// FOR loop to get a Animals instance for each element inside of the animalList,
 					// the instances are from the subclasses of Animals
-					// In here i print the type of the animal because is easy to see what animals
-					// are.
+					// In here I print the type of the animal because is easier to see what animals
+					// are in the ArrayList.
 					for (Animals e : information.animalList) {
 						System.out.println(
 								"          Type: " + e.getType() + "          Name: " + e.getName() + "          Age: "
@@ -551,8 +574,9 @@ public class VetClinic {
 					// type of animals.
 					// Because I only need to print the Array List of each type of animal, in order
 					// to print the list for each type of animal.
-					// The code for each option have the same principle, a FOR loop to read each
-					// instance inside of the ArrayList,then to get the attributes for the instance,
+					// The code for each option have the same principle, a FOR loop to get each
+					// instance inside of the ArrayList,then whit the instance I get the attributes
+					// for the instance,
 					// and then print it.
 
 				} else if (answer == 6) {
@@ -563,10 +587,12 @@ public class VetClinic {
 					do {
 						// display the sixth options
 						displayOptions6();
-						// try and catch to catch the wrong input for the choose6 variable
+						// try and catch to catch the wrong input for the choose variable
 
 						try {
-							// With buffer Reader I get the input and save in choose variable
+							// I used Integer.parseInt to get the integer input from the user; this input
+							// need to be a number between 1 to 8,
+							// without spaces after or before the input.
 							choose = Integer.parseInt(myReader.readLine());
 
 							// -----------------------CHOOSE 1 -----------------------------//
@@ -706,14 +732,15 @@ public class VetClinic {
 								// if the number is bigger or lower of the options this else is going to print
 								// the error message
 								System.out.println(
-										"\n*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 8  *********** \n                       Thanks! ");
+										"\n*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 8  *********** \n                       Thanks! \n");
 
 							}
-							// catch is to avoid that a error input will break the program.
+							// this catch avoid the unforeseen errors in the input, that could be break the
+							// program.
 							// it will print the error and go back to the display options 6.
 						} catch (Exception e) {
 							System.out.println(
-									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 8 without spaces *********** \n                       Thanks! ");
+									"\n*********** ERROR! This options is a letter or contain spaces, please write a number between 1 to 8 without spaces *********** \n                       Thanks! \n");
 							// whit this false the user will continue in the do - while of the option 6
 							option6 = false;
 						}
@@ -728,23 +755,23 @@ public class VetClinic {
 					String name;
 
 					do {
-						// I am getting the input in other method call get User, that also validate the
+						// I will get the input in getUser method, this method will validate the
 						// input.
-						// First, I am sending a prompt to getUser method, in order to ask to the user.
-						// I will get the input until it has passed the validation.
-						name = getUser("  ----------  Please write the Name of the animal you are looking for: ");
+						// I am only sending the prompt to print the statement, and I will get the input
+						// after it has passed the validation.
+						name = getUser("  ----------  Please write the Name of the animal you are looking for: \n");
 
 						// I am sending the input to the search method in Information class, as a result
 						// I will get an ArrayList with all the Animals that contains the input name.
 						ArrayList<Animals> foundanimal = information.searchAnimal(name.toLowerCase().trim());
 
-						// if the array I will receive is empty, this print a message to inform that
-						// this animal do not exist.
+						// if I receive an empty ArrayList, this print a message to inform that
+						// this animal do not exist in the clinic.
 						if (foundanimal.size() <= 0) {
-							System.out.println("\n---------- SORRY! This animal is not registered in the clinic");
+							System.out.println("\n---------- SORRY! This animal is not registered in the clinic \n");
 							// if the arrayList is not empty, with a for loop I will obtain each instance
 							// inside of the ArrayList.
-							// Then I will print it with all the attributes of the Animals
+							// Then I will get the attributes of the Animal instance and print it
 						} else {
 							System.out.println("\n          The answer from our system is: \n");
 							for (Animals a : foundanimal) {
@@ -755,12 +782,12 @@ public class VetClinic {
 							}
 						}
 
-						// I am sending a prompt to the get confirmation method. In that method I am
-						// getting the input for yes or not and validate the input.
-						// After the input is validate, I will receive a true or false in answer1
+						// I am sending a prompt to the getconfirmation method. In that method I
+						// am getting the input for the word yes or not and validate the input.
+						// After the input is validated, I will receive a true or false in answer1
 						// boolean variable.
 						answer1 = getconfirmation1("\n  ----------  If you want to look for other animal write: " + yes
-								+ ", if not write: " + no);
+								+ ", if not write: " + no + "\n");
 
 						// if the answer1 is yes, The user will be continue in the loop for option 7.
 						// but if the answer1 is no, I will obtain a true and the loop will break and
@@ -783,7 +810,9 @@ public class VetClinic {
 
 						// try and catch to catch the wrong input for the choose variable
 						try {
-							// With BufferedReader I get the input and save in choose variable
+							// I used Integer.parseInt to get the integer input from the user; this input
+							// need to be a number between 1 to 5,
+							// without spaces after or before the input.
 							choose = Integer.parseInt(myReader.readLine());
 
 							// -----------------------CHOOSE 1 -----------------------------//
@@ -791,6 +820,8 @@ public class VetClinic {
 								// call the method smallVetsHoleQueue that print the hole Queue for each
 								// veterinarians for pets
 								smallVetsHoleQueue();
+								// The false in this boolean variable make the user continue in the loop for
+								// option 8
 								option7 = false;
 
 								// -----------------------CHOOSE 2 -----------------------------//
@@ -798,6 +829,8 @@ public class VetClinic {
 								// call the method largeVetsHoleQueue that print the hole Queue for each
 								// veterinarians for livestock animals
 								largeVetsHoleQueue();
+								// The false in this boolean variable make the user continue in the loop for
+								// option 8
 								option7 = false;
 
 								// -----------------------CHOOSE 3 -----------------------------//
@@ -805,6 +838,8 @@ public class VetClinic {
 								// call the method laboratoriansHoleQueue that print the hole Queue for each
 								// laboratorian
 								laboratoriansHoleQueue();
+								// The false in this boolean variable make the user continue in the loop for
+								// option 8
 								option7 = false;
 
 								// -----------------------CHOOSE 4 -----------------------------//
@@ -815,14 +850,14 @@ public class VetClinic {
 
 								do {
 
-									// I am getting the input in other method call get User, that also validate the
+									// I will get the input in getUser method, this method will validate the
 									// input.
-									// I am only sending the prompt to print the question, and I will get the input
-									// until it has passed the validation.
+									// I am only sending the prompt to print the statement, and I will get the input
+									// after it has passed the validation.
 									name = getUser(
-											"\n  ----------  Please write the NAME of the staff  you are looking for: ");
+											"\n  ----------  Please write the NAME of the staff  you are looking for: \n");
 									sname = getUser(
-											"\n  ----------  Please write the SURNAME of the staff  you are looking for: ");
+											"\n  ----------  Please write the SURNAME of the staff  you are looking for: \n");
 
 									// I am sending the input to the search method in Information class, and get the
 									// id of the medical staff
@@ -831,32 +866,33 @@ public class VetClinic {
 									// whit this id, I will be able to go and search for the medical staff in the
 									// other arrayList, when I have the instances with the queues.
 									if (id == 0) {
-										// if the id is zero the name and the user does not exist in medical staff
-										// In here I could look the input in the staff list and identified it is medical
-										// or administrative staff.
-										// and later search for the queues.
+										// if the id is zero the name that the user is try to find does not exist in
+										// medical staff.
+										// To improve : In here I could search the input in the staff list and
+										// identified it is medical
+										// or administrative staff. And later search for the queues.
 										System.out.println(
-												"\n----------  SORRY! Look for the staff again, because this employee does not work in here.");
+												"\n----------  SORRY! Look for the staff again, because this employee does not work in here. \n");
 
 										// if the id is between this numbers means that is a veterinarian for pets, so
-										// the search must be in smallAnimalsVetsList
+										// the search for getting the Queue must be in smallAnimalsVetsList
 									} else if (id >= 111 && id <= 125) {
 										// I am sending the input to the search method in Information class, and I will
 										// get the position in the Array list
-										// With this position, i can get the information for this medical staff and the
+										// With this position, I can get the information for this medical staff and the
 										// queue. Then I just print it.
 										int number = information.smallVetSearch(name, sname);
 
 										String vetna = information.smallAnimalsVetsList.get(number).getName();
 										String vetsna = information.smallAnimalsVetsList.get(number).getSurname();
 
-										System.out.println("\n     |     The veterinarian for pets: " + vetna + " "
-												+ vetsna + "\n     |" + "\n     |     Has the next animals to attent:  "
+										System.out.println("\n     |     The pet veterinarian: " + vetna + " "
+												+ vetsna + "\n     |" + "\n     |     Has the next animals to attend:  "
 												+ "\n     |" + "\n     |     "
 												+ information.smallAnimalsVetsList.get(number).getMyQueue());
 
 										// if the id is between this numbers means that is a veterinarian for livestock
-										// animals, so the search must be in largeAnimalsVetsList
+										// animals, so the search for getting the Queue must be in largeAnimalsVetsList
 
 									} else if (id >= 126 && id <= 130) {
 										// I am sending the input to the search method in Information class, and I will
@@ -868,14 +904,14 @@ public class VetClinic {
 										String vetna = information.largeAnimalsVetsList.get(number).getName();
 										String vetsna = information.largeAnimalsVetsList.get(number).getSurname();
 
-										System.out.println("\n     |     The veterinarian for livestock animals: "
+										System.out.println("\n     |     The livestock veterinarian: "
 												+ vetna + " " + vetsna + "\n     |"
-												+ "\n     |     Has the next animals to attent:  " + "\n     |" +
+												+ "\n     |     Has the next animals to attend:  " + "\n     |" +
 
 												"\n     |     "
 												+ information.largeAnimalsVetsList.get(number).getMyQueue());
 										// if the id is between this numbers means that is a laboratorian, so the search
-										// must be in laboratoriansList
+										// for getting the Queue must be in laboratoriansList
 
 									} else if (id >= 131 && id <= 140) {
 										// I am sending the input to the search method in Information class, and I will
@@ -888,16 +924,16 @@ public class VetClinic {
 										String vetsna = information.laboratoriansList.get(number).getSurname();
 
 										System.out.println("\n     |     The laboratorian: " + vetna + " " + vetsna
-												+ "\n     |" + "\n     |     Has the next animals to attent:  "
+												+ "\n     |" + "\n     |     Has the next animals to attend:  "
 												+ "\n     |" +
 
 												"\n     |     "
 												+ information.laboratoriansList.get(number).getMyQueue());
 
 									}
-									// I am sending a prompt to getconfirmation method. In that method I am getting
-									// the input for yes or not and validate the input.
-									// After the input is validate, I will receive a true or false in answer1
+									// I am sending a prompt to the getconfirmation method. In that method I
+									// am getting the input for the word yes or not and validate the input.
+									// After the input is validated, I will receive a true or false in answer1
 									// boolean variable.
 									answer1 = getconfirmation1("\n"
 											+ "\n  ----------  If you want to look for other veterinarian or laboratorian write: "
@@ -917,14 +953,15 @@ public class VetClinic {
 								// the error message.
 							} else {
 								System.out.println(
-										"*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 5 ***********\n                       Thanks! ");
+										"*********** ERROR! This number is lower and bigger than the options, please write a number between 1 to 5 ***********\n                       Thanks! \n");
 
 							}
-							// catch is to avoid that a error input will break the program.
+							// this catch avoid the unforeseen errors in the input, that could be break the
+							// program.
 							// it will print the error and go back to the display options 8.
 						} catch (Exception e) {
 							System.out.println(
-									"*********** ERROR! what you just write contain a letter or space *********** \n***********       Please write a number between 1 to 5 without spaces *********** \n                       Thanks! ");
+									"*********** ERROR! what you just write contain a letter or space *********** \n***********       Please write a number between 1 to 5 without spaces *********** \n                       Thanks! \n");
 							// whit this false the user will continue in the do - while of the option 8
 							option7 = false;
 						}
@@ -951,12 +988,13 @@ public class VetClinic {
 					// first question about what is the name and surname of the medical staff that
 					// the user is looking for
 					do {
-						// I am getting the input in other method call get User, that also validate the
+						// I will get the input in getUser method, this method will validate the
 						// input.
-						// I am only sending the prompt to print the question, and I will get the input
-						// until it has passed the validation.
-						name = getUser("\n  ----------  Please write the NAME of the staff you are looking for:  ");
-						sname = getUser("\n  ----------  Please write the SURNAME of the staff you are looking for: ");
+						// I am only sending the prompt to print the statement, and I will get the input
+						// after it has passed the validation.
+						name = getUser("\n  ----------  Please write the NAME of the staff you are looking for:  \n");
+						sname = getUser(
+								"\n  ----------  Please write the SURNAME of the staff you are looking for: \n");
 
 						// I am sending the input to the search method in Information class, and receive
 						// the id of the staff.
@@ -973,7 +1011,7 @@ public class VetClinic {
 							// and later search for the queues.
 
 							System.out.println(
-									"\n----------  SORRY! Look for the staff again, because this employee does not work in here  ----------");
+									"\n----------  SORRY! Look for the staff again, because this employee does not work in here  ----------\n");
 
 							// if the id is between this numbers means that is a veterinarian for pets, so
 							// the search must be in smallAnimalsVetsList
@@ -990,14 +1028,14 @@ public class VetClinic {
 							// method getconfirmation but with two different booleans
 							// and other boolean to break the do - while.
 							do {
-								// I am sending a prompt to getconfirmation method. In that method I am getting
-								// the input for yes or not and validate the input.
-								// After the input is validate, I will receive a true or false in answer1
+								// I am sending a prompt to the getconfirmation method. In that method I
+								// am getting the input for the word yes or not and validate the input.
+								// After the input is validated, I will receive a true or false in answer1
 								// boolean variable.
 								answer1 = getconfirmation1(
-										"\n  ----------  Did you finish to attent this animaland would you like to attent the next one?, please write: "
+										"\n  ----------  Did you finish to attend this animaland would you like to attend the next one?, please write: "
 												+ yes + "\n or " + no
-												+ " if you haven't finished to attent this animal and you would like to go back.");
+												+ " if you haven't finished to attend this animal and you would like to go back.\n");
 								// if the answer is yes, I will obtain false, and I will sent the position of
 								// the array to nextsmallAnimalQueue method, where I will print the next animal
 								// to attend.
@@ -1012,13 +1050,13 @@ public class VetClinic {
 								} else if (answer1 == true) {
 
 									smallVetsQueue(number);
-									// I am sending a prompt to getconfirmation method. In that method I am getting
-									// the input for yes or not and validate the input.
-									// After the input is validate, I will receive a true or false in answer1
+									// I am sending a prompt to the getconfirmation method. In that method I
+									// am getting the input for the word yes or not and validate the input.
+									// After the input is validated, I will receive a true or false in answer2
 									// boolean variable.
 									answer2 = getconfirmation1(
 											"\n  ----------  Would you like to continue with the same veterinarian?, please write: "
-													+ yes + " or " + no);
+													+ yes + " or " + no + "\n");
 
 									if (answer2 == false) {
 										// whit this false the user will continue in the do - while of the same medical
@@ -1053,12 +1091,16 @@ public class VetClinic {
 							// method getconfirmation but with two different booleans
 							// and other boolean to break the do - while.
 							do {
-
+								// I am sending a prompt to the getconfirmation method. In that method I
+								// am getting the input for the word yes or not and validate the input.
+								// After the input is validated, I will receive a true or false in answer1
+								// boolean variable.
 								answer1 = getconfirmation1(
-										"\n  ----------  Did you finish to attent this animal and would you like to attent the next one?, please write: "
+										"\n  ----------  Did you finish to attend this animal and would you like to attend the next one?, please write: "
 												+ yes + "\n or " + no
-												+ " if you haven't finished to attent this animal and you would like to go back.");
+												+ " if you haven't finished to attend this animal and you would like to go back.\n");
 								// if the answer is yes, I will obtain false, and I will sent the position of
+								// the medical staff in
 								// the array to nextlargeAnimalQueue method, where I will print the next animal
 								// to attend.
 								if (answer1 == false) {
@@ -1068,15 +1110,16 @@ public class VetClinic {
 									flag = false;
 									// if the answer is no, I will print the same animal that is been attended by
 									// the medical staff.
-									// I will send the position of the array to the first method to get the animal
+									// I will send the position of the medical staff in the array to the first
+									// method to get the animal
 									// that is attending by the medical staff.
 								} else if (answer1 == true) {
 
 									largeVetsQueue(number);
 
-									// I am sending a prompt to getconfirmation method. In that method I am getting
-									// the input for yes or not and validate the input.
-									// After the input is validate, I will receive a true or false in answer1
+									// I am sending a prompt to the getconfirmation method. In that method I
+									// am getting the input for the word yes or not and validate the input.
+									// After the input is validated, I will receive a true or false in answer1
 									// boolean variable.
 
 									answer2 = getconfirmation1(
@@ -1085,14 +1128,16 @@ public class VetClinic {
 
 									if (answer2 == false) {
 										flag = false;
-										// whit this false the user will continue in the do - while of the same medical
+										// if the flag boolean is false the user will continue in the do - while of the
+										// same medical
 										// staff
 									} else if (answer2 == true) {
-										// whit this true the user will go back to the do - while of the option 9
+										// if the flag boolean is true the user will go back to the do - while of the
+										// option 9
 										flag = true;
 									}
 								}
-								// this do - while is running until flag is true.
+								// this do - while is running until variable flag is true.
 							} while (!flag);
 //--------------------------------------------------------------------------------------------------------------------//
 						} else if (id >= 131 && id <= 140) {
@@ -1107,11 +1152,14 @@ public class VetClinic {
 							// method getconfirmation but with two different booleans
 							// and other boolean to break the do - while.
 							do {
-
+								// I am sending a prompt to the getconfirmation method. In that method I
+								// am getting the input for the word yes or not and validate the input.
+								// After the input is validated, I will receive a true or false in answer1
+								// boolean variable.
 								answer1 = getconfirmation1(
-										"\n  ----------  Did you finish to attent this animal and would you like to attent the next one?, please write: "
+										"\n  ----------  Did you finish to attend this animal and would you like to attend the next one?, please write: "
 												+ yes + "\n or " + no
-												+ " if you haven't finished to attent this animal and you would like to go back.");
+												+ " if you haven't finished to attend this animal and you would like to go back.");
 								// if the answer is yes, I will obtain false, and I will sent the position of
 								// the array to nextlaboratoriansQueue method, where I will print the next
 								// animal to attend.
@@ -1122,15 +1170,15 @@ public class VetClinic {
 									flag = false;
 									// if the answer is no, I will print the same animal that is been attended by
 									// the medical staff.
-									// I will send the position of the array to the first method to get the animal
+									// I will send the position in the array to the first method to get the animal
 									// that is attending by the medical staff.
 								} else if (answer1 == true) {
 
 									laboratoriansQueue(number);
 
-									// I am sending a prompt to getconfirmation method. In that method I am getting
-									// the input for yes or not and validate the input.
-									// After the input is validate, I will receive a true or false in answer1
+									// I am sending a prompt to the getconfirmation method. In that method I
+									// am getting the input for the word yes or not and validate the input.
+									// After the input is validated, I will receive a true or false in answer2
 									// boolean variable.
 
 									answer2 = getconfirmation1(
@@ -1155,9 +1203,9 @@ public class VetClinic {
 
 //--------------//-----------------FINISH TO PRINT --------------------------------------------------//
 
-						// I am sending a prompt to getconfirmation method. In that method I am getting
-						// the input for yes or not and validate the input.
-						// After the input is validate, I will receive a true or false in answer1
+						// I am sending a prompt to the getconfirmation method. In that method I
+						// am getting the input for the word yes or not and validate the input.
+						// After the input is validated, I will receive a true or false in answer3
 						// boolean variable.
 
 						answer3 = getconfirmation1(
@@ -1165,14 +1213,15 @@ public class VetClinic {
 										+ " if not write " + no);
 						// if the answer is yes, the return is false, so The user is going to continue
 						// in option 9
-						// but if the answer is no, the return is true and it will break the do - while
+						// but if the answer is no, the return is true and it will breaks the do - while
 						// and return to the main options.
 						// this do - while is running until answer is true.
 					} while (!answer3);
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 				} else if (answer == 10) {
-					// the option 10 is a break to stop the main do while and thanks for visit us.
+					// the option 10 is a break to stop the main do while and send the message
+					// "thanks for visit us".
 					System.out.println(
 							"\n  ----------------  THANK YOU FOR VISIT US, HAVE A GOOD DAY   ----------------  ");
 					break;
@@ -1187,7 +1236,8 @@ public class VetClinic {
 					// And continue in the main loop.
 				}
 //*************************************** FINISH TRY - CATCH ************************************************//
-				// catch is to avoid that a error input will break the program.
+				// this catch avoid the unforeseen errors in the input, that could be break the
+				// program.
 				// it will print the error and go back to display the main options
 			} catch (Exception e) {
 				System.out.println(
@@ -1210,11 +1260,11 @@ public class VetClinic {
 
 	// I have all the display options in here. Each method only contain a lines of
 	// system.out.println of each display menu and sub menus.
-	// The last option of each sub menu is a go back to the main method.
+	// The last option of each sub menu is a option to go back to the main method.
 
 	public void displayOptions() {
 
-		System.out.println("\n          What it is the option you want to use:\n");
+		System.out.println("\n          Select an option from the menu below:\n");
 		System.out.println("          1.  List of all the staff");
 		System.out.println("          2.  List the staff by category ");
 		System.out.println("          3.  List of the Administrative Staff who are performing a specific task");
@@ -1224,18 +1274,18 @@ public class VetClinic {
 		System.out.println("          7.  Search for a specific animal by name");
 		System.out.println("          8.  List all the animals assigned to a member of medical staff");
 		System.out.println(
-				"          9.  Search for a specific medical staff and see:\n              what is the animal they are attending and get the next animal to attent");
+				"          9.  Search for a specific medical staff and see:\n              which animal they are attending and get the next animal to attend");
 		System.out.println("          10. Finish to search\n");
 
 	}
 
 	public void displayOptions2() {
 
-		System.out.println("\n          Choose what list you want to see:\n ");
+		System.out.println("\n          Choose which list you want to see:\n ");
 		System.out.println("          1.  List of Medical staff ");
 		System.out.println("          2.  List of Administrative staff ");
-		System.out.println("          3.  List of Veterinarias of pets");
-		System.out.println("          4.  List of Veterinarias for livestock animals");
+		System.out.println("          3.  List of pet Veterinarians");
+		System.out.println("          4.  List of livestock Veterinarians");
 		System.out.println("          5.  List of Laboratorians ");
 		System.out.println("          6.  List of Receptionist staff");
 		System.out.println("          7.  List of IT staff");
@@ -1246,12 +1296,12 @@ public class VetClinic {
 
 	public void displayOptions3() {
 
-		System.out.println("\n          Choose how you would like to check who are performing the taks:\n");
+		System.out.println("\n          Choose an option below to see who is performing which tasks:\n");
 		System.out.println("          1.  List of administrative staff with the tasks they are performing");
-		System.out.println("          2.  Who are in holidays");
-		System.out.println("          3.  Who is palaning new team activities");
-		System.out.println("          4.  Who is working in the Website");
-		System.out.println("          5.  Who is doing desk tasks ");
+		System.out.println("          2.  Who큦 on holidays");
+		System.out.println("          3.  Who큦 planning new team activities");
+		System.out.println("          4.  Who큦 working on the Website");
+		System.out.println("          5.  Who큦 doing desk tasks ");
 		System.out.println("          6.  Go back to the main options \n");
 
 	}
@@ -1259,14 +1309,14 @@ public class VetClinic {
 	public void displayOptions4() {
 		System.out.println("\n          Choose how you would like to search the staff:\n");
 		System.out.println("          1.  Look for similar Name or Surname");
-		System.out.println("          2.  Look for specific Full Name ");
+		System.out.println("          2.  Look for a specific Full Name ");
 		System.out.println("          3.  Go back to the main options \n");
 
 	}
 
 	public void displayOptions6() {
 
-		System.out.println("\n          Choose what list of type of animals you want to see:\n ");
+		System.out.println("\n          Choose which list of animal type you want to see:\n ");
 		System.out.println("          1.  List of Companion animals ");
 		System.out.println("          2.  List of Livestock animals ");
 		System.out.println("          3.  List of Cats");
@@ -1280,10 +1330,10 @@ public class VetClinic {
 
 	public void displayOptions8() {
 
-		System.out.println("\n          Choose what queue  you would like to see:\n ");
-		System.out.println("          1.  Queues of each Veterinarian for pets");
-		System.out.println("          2.  Queues of each Veterinarian for livestosck animals. ");
-		System.out.println("          3.  Queues of each Laboratorians");
+		System.out.println("\n          Choose which queue you would like to see:\n ");
+		System.out.println("          1.  Queues for each pet Veterinarian ");
+		System.out.println("          2.  Queues for each livestosck Veterinarian  ");
+		System.out.println("          3.  Queues for each Laboratorians");
 		System.out.println("          4.  Look for a especific Medical Staff and see their queue");
 		System.out.println("          5.  Go back to the first options\n");
 
@@ -1291,10 +1341,11 @@ public class VetClinic {
 
 // +++++++++++++++++++++++++++++++++++++ VALIDATIONS METHODS  ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 
-	// These method are helping to validate the inputs receiving for the user.
+	// These methods are helping to validate the inputs we will receive from the
+	// user.
 
 	// This method validate a string and I used to use to validate each string that
-	// I got from the user, but I change this method for getUser.
+	// I got from the user, but I changed this method for getUser.
 //	public static boolean validate(String input) {
 //
 //		if (input.length() < 3 || input.length() > 12) {
@@ -1312,33 +1363,36 @@ public class VetClinic {
 //		}
 //	}
 
-// I choose this validation because it was easier to use with different variables and sending different messages. Also reduce the code in the options.
+// I choose this validation because it was easier to use with different variables and printing different messages. Also it help me to reduce the code in the options.
 //	 Validation of my user input: this method is creating to validate and control the user input, in order to get the correct information. 
 	public static String getUser(String prompt) {
 
 		// I am using the Buffer reader to get the input from the user
 		BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
-		// variable boolean for break the do -while loop
+		// variable boolean to break the do -while loop
 		boolean valid = false;
-		// variable to get the user input as a String variable
+		// variable to save the user input as a String.
 		String input = "";
 
-		// do -while: in order to validate the input, if this not fulfill the conditions
+		// do -while: this do -while will be the loop to validate the input. If the
+		// input no fulfill the conditions
 		// the do while keep going until the input is valid.
 		do {
 			// print the String I am getting from the options.
 			System.out.println(prompt);
 
-			// try -catch: in order to get the error in the input that I am not aware of.
+			// try -catch: This help me to get the errors in the input that I am not aware
+			// of.
 			try {
-				// I am getting the input with bufferreader and save ib a variable input.
+				// I am getting the input with bufferreader and save it in a variable input.
 				input = myReader.readLine();
 
-				// Because the names and surnames that I have in the file contain between 3 and
-				// 12 letters, I thought it could be the main validation.
+				// Because the names and surnames that I have in the file have a length of 3 and
+				// 12 letters, I thought it could be the main validation for the input.
 				if ((input.length() < 3) || (input.length() > 12)) {
-					// if The input do not fulfill this condition, the boolean is going to be false
-					// and run the loop again to get a new input.
+					// if The input does not fulfill this condition, the boolean is going to be
+					// false
+					// and run the loop again. The bufferReader will ask again for a new input.
 					// And It will print the error message.
 					valid = false;
 					System.out.println(
@@ -1347,20 +1401,21 @@ public class VetClinic {
 				} else {
 
 					// If the user input contain numbers, it will print a message error and run the
-					// loop again to get a new input..
+					// loop again. Where the bufferReader will ask again for a new input.
 					if (input.matches("[0-9]+")) {
 						valid = false;
 						System.out.println(
 								"\n*********** ERROR!, This has a number, you must enter a name between 3 and 12 letters  ***********\n ");
 
 						// if the input is not only letters, it will print a message error and run the
-						// loop again to get a new input..
+						// loop again. Where the bufferReader will ask again for a new input.
 					} else if (!input.matches("[a-z A-Z]+")) {
 						valid = false;
 						System.out.println(
 								"\n*********** ERROR!, This is not only letters, you must enter a name between 3 and 12 letters  *********** \n");
 
-						// if the input fulfill al the condition, it will print true and break the loop.
+						// if the input fulfill all the condition, it will print true and break the
+						// validation loop.
 					} else {
 						valid = true;
 					}
@@ -1369,16 +1424,16 @@ public class VetClinic {
 				valid = false; // happen after try.
 				System.out.println("\n*********** ERROR! You did not eneter a valid name!  *********** \n");
 			}
-			// the do - while is running until the boolean valid is true. when the input
-			// fulfill all the conditions.
+			// the do - while is running until the boolean valid is true. This will happen
+			// when the input will be valid and fulfill all the conditions.
 		} while (!valid);
 		// return the input.
 		return input;
 	}
 
-// Method to validate my option yes or no, I created a method because I am going to use this method in many occasions. 
+// Method to validate my option yes or no, I created a method because I used this method in many occasions. 
 	// And this help me to have less code, and make easier to handle the do - while
-	// loops.
+	// loops in the options.
 	public static boolean getconfirmation1(String prompt) {
 
 		// buffer reader to get the input of the user
@@ -1415,7 +1470,8 @@ public class VetClinic {
 					}
 					// in the case the input is correct, it is going to get out of this do _while
 					valid = true;
-					// if the input is not correct is going to return a error message and ask again
+					// if the input is not correct, it is going to return a error message and ask
+					// again
 					// for the correct input
 					// if the input is a number, a different word, or a space, it will return this
 					// error message
@@ -1432,13 +1488,13 @@ public class VetClinic {
 			// the do while is running until the variable valid is no false, in other words
 			// when the input is valid
 		} while (!valid);
-		// the return is going to be false, if the answer is yes and true if the answer
+		// the return is going to be false if the answer is yes, and true if the answer
 		// is no
 		return flag;
 	}
 
 	// I used this method before to validate the yes and no, but I changed.
-	// Because I saw that the other method it would help me to reduce the code in
+	// Because I saw that the other method, it would help me to reduce the code in
 	// the constructor, and help me to avoid some conflicts with the do -while
 	// loops.
 //	public static String getconfirmation(String prompt) {
@@ -1472,13 +1528,13 @@ public class VetClinic {
 	// there are a tree methods for each type of medical staff:
 	// 1. Print the hole QUEUE of the medical staff
 	// 2. Print only the first animal of the QUEUE for the specific medical staff.
-	// 3. Print the nest animal in the QUEUE for a specific medical staff.
+	// 3. Print the next animal in the QUEUE for a specific medical staff.
 
-	// ----------------- QUEUES OF THE VETERINARIAS FOR PETS ------------------//
+	// ----------------- QUEUES OF PET VETERINARIANS ------------------//
 
 	// Print the hole QUEUE
 	public void smallVetsHoleQueue() {
-		System.out.println("\n          The queue in the clinic for each Small Veterinarian: ");
+		System.out.println("\n          The queue in the clinic for each pet Veterinarian: ");
 
 		// FOR loop to read each instance inside of the ArrayList
 		for (int i = 0; i < information.smallAnimalsVetsList.size(); i++) {
@@ -1488,17 +1544,19 @@ public class VetClinic {
 
 			// Print it
 			System.out
-					.println("\n     |      " + smname + " " + smsname + "\n     |     has to attent the next animals: "
+					.println("\n     |      " + smname + " " + smsname + "\n     |     has to attend the next animals: "
 							+ information.smallAnimalsVetsList.get(i).getMyQueue());
 		}
 
 	}
 
 	// Print the first animal of the Queue for a specific medical staff
-	// This method received the number of the position in the ArrayList
+	// This method received the number of the position of the medical staff in the
+	// ArrayList
 	public void smallVetsQueue(int number) {
 
-		// with this number, it will obtain the information of the instance and the
+		// with this number, it will obtain the information of the specific instance and
+		// the
 		// information of the first animal of the queue.
 		String vetna = information.smallAnimalsVetsList.get(number).getName();
 		String vetsna = information.smallAnimalsVetsList.get(number).getSurname();
@@ -1508,7 +1566,7 @@ public class VetClinic {
 		String type = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
 		// Print it
-		System.out.println("\n     |        The Veterinarian for pets :\n     |" + "\n     |        " + vetna + " "
+		System.out.println("\n     |        The pet Veterinarian:\n     |" + "\n     |        " + vetna + " "
 				+ vetsna + "\n     |" + "\n     |        At the moment is attending a:\n     |"
 				+ "\n     |        Type: " + type + "\n     |" + "\n     |        With next information:" + "\n     |"
 				+ "\n     |        * Name: " + na + "\n     |        * Age: " + age
@@ -1516,12 +1574,12 @@ public class VetClinic {
 
 	}
 
-	// Print the next animal of the Queue for a specific medical staff
+	// Print the next animal of the Queue for a specific medical staff.
 	// In order to get the specific medical staff, this method received the position
-	// of the Array List of this particular medical staff.
+	// of the medical staff in the Array List.
 	public void nextsmallAnimalQueue(int number) {
 
-		// in here, whit the position we get the instance and the queue, then we call
+		// In here, I used the position to get the instance and the queue, then we call
 		// the remove method from QUEUE class.
 		// this line is going to remove the first animal in the queue of this particular
 		// medical staff.
@@ -1530,7 +1588,7 @@ public class VetClinic {
 		information.smallAnimalsVetsList.get(number).getMyQueue().remove();
 
 		// After we have removed the fist animal in the queue, we only need to print
-		// again the first animal in the QUEUE, adn we will obtain the next one. .
+		// again the first animal in the QUEUE, and we will obtain the next one. .
 
 		String na1 = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
 		double age1 = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getAge();
@@ -1538,16 +1596,15 @@ public class VetClinic {
 		String type1 = information.smallAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
 		// Print it
-		System.out.println("\n      |       The next animal to attent is a:\n      | " + "\n      |        * Type: "
+		System.out.println("\n      |       The next animal to attend is a:\n      | " + "\n      |        * Type: "
 				+ type1 + "\n      |" + "\n      |        With next information:\n      |  ");
 		System.out.println("      |        * Name: " + na1 + "\n      |        * Age: " + age1
 				+ "\n      |        * Medical condition: " + med1);
 
 	}
 
-	// ----------------- QUEUES OF THE VETERINARIAS FOR LIVESTOCK ANIMALS
-	// ------------------//
-	// THE CODE IS THE SAME TO THE QUEUES FOR VETERINARIANS FOR PETS, THE ONLY
+	// ---------- QUEUES OF LIVESTOCK VETERINARIANS -------------//
+	// THE CODE IS THE SAME TO THE QUEUES FOR PET VETERINARIAN, THE ONLY
 	// CHANGE IS THE ARRAY LIST.
 
 	public void largeVetsHoleQueue() {
@@ -1563,18 +1620,19 @@ public class VetClinic {
 
 			// Print it
 			System.out
-					.println("\n     |      " + laname + " " + lasname + "\n     |     has to attent the next animals: "
+					.println("\n     |      " + laname + " " + lasname + "\n     |     has to attend the next animals: "
 							+ information.largeAnimalsVetsList.get(i).getMyQueue());
 		}
 
 	}
 
 	// Print the first animal of the Queue for a specific medical staff
-	// This method received the number of the position in the ArrayList
+	// In order to get the specific medical staff, this method received the position
+	// of the medical staff in the Array List.
 	public void largeVetsQueue(int number) {
 
-		// with this number, it will obtain the information of the instance and the
-		// information of the first animal of the queue.
+		// with this number, it will obtain the information of the specific instance and
+		// the information of the first animal of the queue.
 		String vetna = information.largeAnimalsVetsList.get(number).getName();
 		String vetsna = information.largeAnimalsVetsList.get(number).getSurname();
 		String na = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
@@ -1583,7 +1641,7 @@ public class VetClinic {
 		String type = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
 		// Print it
-		System.out.println("\n     |        The Veterinarian for livestock animals:\n     |" + "\n     |        "
+		System.out.println("\n     |        The livestock Veterinarian:\n     |" + "\n     |        "
 				+ vetna + " " + vetsna + "\n     |" + "\n     |        At the moment is attending a:\n     |"
 				+ "\n     |        Type: " + type + "\n     |" + "\n     |        With next information:" + "\n     |"
 				+ "\n     |        * Name: " + na + "\n     |        * Age: " + age
@@ -1596,7 +1654,7 @@ public class VetClinic {
 	// of the Array List of this particular medical staff.
 	public void nextlargeAnimalQueue(int number) {
 
-		// in here, whit the position we get the instance and the queue, then we call
+		// In here, I used the position to get the instance and the queue, then we call
 		// the remove method from QUEUE class.
 		// this line is going to remove the first animal in the queue of this particular
 		// medical staff.
@@ -1605,14 +1663,14 @@ public class VetClinic {
 		information.largeAnimalsVetsList.get(number).getMyQueue().remove();
 
 		// After we have removed the fist animal in the queue, we only need to print
-		// again the first animal in the QUEUE, adn we will obtain the next one.
+		// again the first animal in the QUEUE, and we will obtain the next one.
 		String na1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getName();
 		double age1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getAge();
 		String med1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getMedicalCondition();
 		String type1 = information.largeAnimalsVetsList.get(number).getMyQueue().getFirst().getType();
 
 		// Print it
-		System.out.println("\n      |       The next animal to attent is a:\n      | " + "\n      |        * Type: "
+		System.out.println("\n      |       The next animal to attend is a:\n      | " + "\n      |        * Type: "
 				+ type1 + "\n      |" + "\n      |        With next information:\n      |  ");
 		System.out.println("      |        * Name: " + na1 + "\n      |        * Age: " + age1
 				+ "\n      |        * Medical condition: " + med1);
@@ -1636,7 +1694,7 @@ public class VetClinic {
 
 			// Print it
 			System.out.println(
-					"\n     |      " + labname + " " + labsname + "\n     |     has to attent the next animals: "
+					"\n     |      " + labname + " " + labsname + "\n     |     has to attend the next animals: "
 							+ information.laboratoriansList.get(i).getMyQueue());
 
 		}
@@ -1648,8 +1706,8 @@ public class VetClinic {
 
 	public void laboratoriansQueue(int number) {
 
-		// with this number, it will obtain the information of the instance and the
-		// information of the first animal of the queue.
+		// with this number, it will obtain the information of the specific instance and
+		// the information of the first animal of the queue.
 		String vetna = information.laboratoriansList.get(number).getName();
 		String vetsna = information.laboratoriansList.get(number).getSurname();
 		String na = information.laboratoriansList.get(number).getMyQueue().getFirst().getName();
@@ -1670,7 +1728,7 @@ public class VetClinic {
 	// of the Array List of this particular medical staff.
 	public void nextlaboratoriansQueue(int number) {
 
-		// in here, whit the position we get the instance and the queue, then we call
+		// In here, I used the position to get the instance and the queue, then we call
 		// the remove method from QUEUE class.
 		// this line is going to remove the first animal in the queue of this particular
 		// medical staff.
@@ -1679,14 +1737,14 @@ public class VetClinic {
 		information.laboratoriansList.get(number).getMyQueue().remove();
 
 		// After we have removed the fist animal in the queue, we only need to print
-		// again the first animal in the QUEUE, adn we will obtain the next one.
+		// again the first animal in the QUEUE, and we will obtain the next one.
 		String na1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getName();
 		double age1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getAge();
 		String med1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getMedicalCondition();
 		String type1 = information.laboratoriansList.get(number).getMyQueue().getFirst().getType();
 
 		// Print it
-		System.out.println("\n      |       The next animal to attent is a:\n      | " + "\n      |        * Type: "
+		System.out.println("\n      |       The next animal to attend is a:\n      | " + "\n      |        * Type: "
 				+ type1 + "\n      |" + "\n      |        With next information:\n      |  ");
 		System.out.println("      |        * Name: " + na1 + "\n      |        * Age: " + age1
 				+ "\n      |        * Medical condition: " + med1);
