@@ -27,13 +27,20 @@ public class InfoStaff {
 	ArrayList<String> namesFile = new ArrayList<String>();
 	ArrayList<String> surnamesFile = new ArrayList<String>();
 
-	public InfoStaff() throws IOException {
+	// constructor to run the methods I needed to run in order to be able to run the
+	// main project
+	// but in this case I do not need to run in here any method because I am calling
+	// this methods in Information, so I would run the methods in there.
+	//	public InfoStaff() throws IOException {
+	//
+	//		readSuramesFile();
+	//		readNamesFile();
+	//
+	//	}
 
-		readSuramesFile();
-		readNamesFile();
-
-	}
-
+	// Because in here we need a Throws exception in order to catch any error with
+	// the file, we would need a throw exception in every method that will be use
+	// this array
 	public ArrayList<String> readNamesFile() throws IOException {
 		// TODO Auto-generated method stub
 
