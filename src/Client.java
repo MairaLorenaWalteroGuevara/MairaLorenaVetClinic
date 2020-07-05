@@ -21,7 +21,7 @@ public class Client {
 	// 1.1  ADMININSTRATIVE STAFF HAS 3 CHILDS: 
 	//1.1.1 HR (id=229 -230)  ,   1.1.2   IT (id=226-228)   AND   1.1.3 RECEPTIONIST (id=221-225)
 	
-	// 1.2.  MEDICAL STAFF HAS 3 CHILDS: 
+	// 1.2.  MEDICAL STAFF HAS 3 CHILDREN: 
 	//1.2.1  SMALL ANIMALS VETS (id= 111 - 125)   ,   1.2.2  LARGE ANIMALS VETS  (id= 126 - 130)   AND    LABORATORIANS (id= 131 - 140) 
 	//1.2.1  SMALL ANIMALS VETS is only attending small animals = pets 
 	//1.2.2  LARGE ANIMALS VETS is only attending large animals = livestock animals 
