@@ -11,12 +11,13 @@ public class Client {
 	
 	new VetClinic();
 	
-	// WELCOME TO MY CODE: MAIRA LORENA WALTERO GUEVARA 2019208
+	// WELCOME TO MY CODE: MAIRA LORENA WALTERO GUEVARA 
+	// This code is for demonstration purposes for my application for Graduate Software Engineer (Dublin)in DATALEX 
 	
 	// MY CLINIC IS DIVIDED IN TWO SUPER CLASES: 
 	// 1. STAFF     AND   2. ANIMALS 
 	
-	// 1. STAFF HAS 3 CHILDS: 
+	// 1. STAFF HAS 3 CHILDREN: 
 	// 1.1  ADMINISTRATIVE STAFF     AND   1.2 MEDICAL STAFF
 	// 1.1  ADMININSTRATIVE STAFF HAS 3 CHILDS: 
 	//1.1.1 HR (id=229 -230)  ,   1.1.2   IT (id=226-228)   AND   1.1.3 RECEPTIONIST (id=221-225)

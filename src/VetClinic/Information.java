@@ -31,7 +31,7 @@ public class Information {
 	// and
 	// to search for a specific staff.
 	// But it was a little challenging, when I had to search for an employee and
-	// return the Queue. Because the queues are creating with the instances inside
+	// return the Queue. Because the queues are created with the instances inside
 	// of
 	// smallAnimalsVestList, largeAnimalsVestList and laboratoriansList.
 	// For that reason, I had to search the employee in medicalStaffList,

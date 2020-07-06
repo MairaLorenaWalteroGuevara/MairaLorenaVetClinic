@@ -31,8 +31,7 @@ public class VetClinic {
 	// Information class to give the answer to the user.
 	// In addition I used the instances from the subclasses of Animals and Staff,
 	// to get the attributes of each instance.
-	// In some parts I am going to write an improve suggestion that could be change
-	// later or take in mind for the future codes.
+	// In some parts I am going to write as a suggested improvement to have in mind for future coding.
 
 	// The Main class I am using in here is Information, for this reason, I
 	// need a instance of Information, for practical use I call this instance
@@ -47,7 +46,7 @@ public class VetClinic {
 
 	public VetClinic() throws IOException {
 
-		// I am initialized the information instance from Information class
+		// I initialize the information instance from Information class
 		information = new Information();
 
 		// Variable integer for get the number of the answer, in order to choose the
@@ -106,7 +105,7 @@ public class VetClinic {
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 					// THE SECOND OPTION GIVE THE OPTION TO PRINT THE LIST FOR EACH TYPE OF THE
 					// STAFF
-					// In this option we can see how useful was create a different arrays for each
+					// In this option we can see how useful was to create a different arrays for each
 					// type of staff.
 					// Because I only need to print the Array List of each type of staff, in order
 					// to print the list for each type of staff.
@@ -314,7 +313,7 @@ public class VetClinic {
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 					// THE THIRD OPTION GIVE THE OPTION TO PRINT THE ADMINISTRATIVE STAFF THAT IS
-					// PERFORMIN A SPECIFIC TASK
+					// PERFORMING A SPECIFIC TASK
 					// In this option I printed each array that contain the instance with the task
 					// attribute.
 					// In order to do this, first I get each instances inside of the array that
@@ -1220,6 +1219,21 @@ public class VetClinic {
 
 // ++++++++++++++++++++++++++++++++++++++++++ ANSWER 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++//
 				} else if (answer == 10) {
+					System.out.println(
+							"\n         | -------------------------------------------------------------------- |");
+					System.out.println("\n          The list of all Animals: \n");
+					// FOR loop to get a Animals instance for each element inside of the animalList,
+					// the instances are from the subclasses of Animals
+					// In here I print the type of the animal because is easier to see what animals
+					// are in the ArrayList.
+					for (Animals e : information.animalList) {
+						System.out.println(
+								"          Type: " + e.getType() + "          Name: " + e.getName() + "          Age: "
+										+ e.getAge() + "          Medical condition: " + e.getMedicalCondition());
+					}
+					System.out.println(
+							"\n         | -------------------------------------------------------------------- |");
+				}else if (answer == 11) {
 					// the option 10 is a break to stop the main do while and send the message
 					// "thanks for visit us".
 					System.out.println(
